@@ -1,0 +1,63 @@
+body {
+
+}
+
+#opening {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15%;
+  margin-top: 12%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  margin-left: 5%;
+  /* background-color: blue; */
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: pink; */
+}
+
+#google {
+  text-decoration: none;
+  color: #F3C247;
+  /* padding-top: 50px; */
+}
+
+#google:hover {
+  color: #F8D159;
+}
+
+#btn {
+ text-decoration: none;
+ text-align: center;
+ font-family: 'Shadows Into Light', cursive;
+ font-size: 24px;
+ background-color: white;
+ color: black;
+ border: 2px solid #F3C247;
+ transition-duration: 0.4s;
+ padding: 4px;
+}
+
+#btn:hover {
+  background-color: #F3C247;
+  color: white;
+}
+
+#googleLogo {
+  height: 80px;
+}
