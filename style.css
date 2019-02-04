@@ -56,8 +56,69 @@ p {
 #btn:hover {
   background-color: #F3C247;
   color: white;
+  cursor: pointer;
 }
 
 #googleLogo {
   height: 80px;
+}
+
+#second {
+  text-align: center;
+}
+
+.general {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15%;
+  margin-top: 12%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#drawing {
+display: inline-flex;
+justify-content: space-around;
+align-items: center;
+}
+
+#imgClose {
+  width: 20px;
+  float: left;
+  border: 2px solid #F3C247;
+  transition-duration: 0.4s;
+}
+
+#imgClose:hover {
+  background-color: #F3C247;
+  cursor: pointer;
+}
+
+#imgRef {
+  width: 20px;
+  float: right;
+  border: 2px solid #F3C247;
+  transition-duration: 0.4s;
+}
+
+#imgRef:hover {
+  background-color: #F3C247;
+  cursor: pointer;
+}
+
+#window {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+  border: 4px solid black;
+}
+
+#userGuess {
+  background-color: pink;
+  padding: 20px;
+}
+
+#userAnswer {
+  display: none;
 }
