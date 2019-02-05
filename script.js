@@ -58,8 +58,8 @@ start.addEventListener('click', (ev) => {
 
 let canvas = document.querySelector('#canvas');
 let context = canvas.getContext('2d');
-let height = canvas.height = window.innerHeight; //double assign?
-let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight / 1.3; //double assign?
+let width = canvas.width = window.innerWidth / 2;
 let mouseClicked = false, mouseReleased = true;
 document.addEventListener('click', onMouseClick, false);
 document.addEventListener('mousemove', onMouseMove, false);
@@ -71,8 +71,8 @@ function onMouseClick(e) {
 function onMouseMove(e) {
     if (mouseClicked) {
         context.beginPath();
-        context.arc(e.clientX, e.clientY, 3, 0, Math.PI * 2, false);
-        context.lineWidth = 3;
+        context.arc(e.clientX, e.clientY, 3.5, 0, Math.PI * 2, false);
+        context.lineWidth = 4;
         context.fillStyle = "#fff";
         context.fill();
     }
