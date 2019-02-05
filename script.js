@@ -12,8 +12,12 @@ const screenTwo = document.querySelector('#screen-two');
 
 const screenThree = document.querySelector('#screen-three');
 
+const screenFour = document.querySelector('#screen-four');
+
 screenTwo.style.display = "none";
 screenThree.style.display = "none";
+screenFour.style.display = "none";
+
 
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
@@ -23,8 +27,9 @@ button1.addEventListener('click', function(){
 const randomWord = function(){
   let word = roulette[Math.floor(Math.random() * roulette.length +1)];
   const wordSpace = document.querySelector('#wordSpace');
-  word = wordSpace.innerHTML + " " + word;
-  wordSpace.innerHTML = word;
+  word = wordSpace.innerHTML + " → " + word;
+  wordSpace.innerHTML = word.toUpperCase();
+
 }
 
 button2.addEventListener('click', function(){
@@ -32,6 +37,75 @@ button2.addEventListener('click', function(){
   screenThree.style.display = "block";
   randomWord();
 })
+
+let timeLeft = 30;
+    let counter = document.querySelector('#counter');
+
+    let timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+      if (timeLeft == 0) {
+        clearTimeout(timerId);
+        screenThree.style.display = "none";
+        screenFour.style.display = "block";
+      } else {
+        counter.innerHTML = timeLeft;
+        timeLeft--;
+      }
+    }
+
+////////canvas 2/////
+/// tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
+
+  let canvas = document.querySelector('#canvas');
+  // could be 3d, if you want to make a video game
+  let context = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  context.lineJoin = 'round';
+  context.lineCap = 'round';
+  context.lineWidth = 8;
+  context.strokeStyle = '#000';
+
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  function draw(e) {
+    // stop the function if they are not mouse down
+    if(!isDrawing) return;
+    //listen for mouse move event
+    console.log(e);
+    context.beginPath();
+    context.moveTo(lastX, lastY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', () => isDrawing = false);
+  canvas.addEventListener('mouseout', () => isDrawing = false);
+
+/////
+
+
+
+
+
+
+
+
+
+
+///////
+////drafts///
 
 //////////////
 ///timer 1///
@@ -50,7 +124,9 @@ button2.addEventListener('click', function(){
 //   }
 // }, 1000);
 
-///timer 2///
+///////////
+///timer 2///////
+///////////////
 //countdown from stackoverflow tutorial: https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
 // function startTimer(duration, display) {
 //     let timer = duration, seconds;
@@ -58,10 +134,12 @@ button2.addEventListener('click', function(){
 //       seconds = parseInt(timer % 60, 10);
 //       seconds = seconds < 10 ? "0" + seconds : seconds;
 //       display.textContent = seconds;
-//       if (--timer < 0) {
-//        timer = duration;
+//       // if (--timer < 0) {
+//       //  timer = duration;
 //        //starting to work on connecting to page four- user 2-->>
-//         //if(timer === 0) {
+//         if(timer === 0) {
+//           screenThree.style.display = "none";
+//           screenFour.style.display = "block";
 //       }
 //     }, 1000);
 // }
@@ -70,9 +148,8 @@ button2.addEventListener('click', function(){
 //   display = document.querySelector('#counter');
 //   startTimer(thirtySec, display);
 // };
-//
-//
-//
+
+
 // ////////////////////////////////
 // /////canvas 1//////////////
 // //////////////////
@@ -140,48 +217,7 @@ button2.addEventListener('click', function(){
 // //         context.fill();
 // //     }
 // // }
-//
-//
-//
-////////canvas 2/////
 
-  let canvas = document.querySelector('#canvas');
-  // could be 3d, if you want to make a video game
-  let context = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  context.lineJoin = 'round';
-  context.lineCap = 'round';
-  context.lineWidth = 8;
-  context.strokeStyle = '#000';
-
-  let isDrawing = false;
-  let lastX = 0;
-  let lastY = 0;
-
-  function draw(e) {
-    // stop the function if they are not mouse down
-    if(!isDrawing) return;
-    //listen for mouse move event
-    console.log(e);
-    context.beginPath();
-    context.moveTo(lastX, lastY);
-    context.lineTo(e.offsetX, e.offsetY);
-    context.stroke();
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-  }
-
-  canvas.addEventListener('mousedown', (e) => {
-    isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-  });
-
-  canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mouseup', () => isDrawing = false);
-  canvas.addEventListener('mouseout', () => isDrawing = false);
-//
-//
 // // /////// canvas 3 //////
 // //tutorial from https://codepen.io/medo001/pen/FIbza?editors=1010
 //

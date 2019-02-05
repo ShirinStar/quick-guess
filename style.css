@@ -11,6 +11,8 @@ body{
 
 #screen-two{
   background-color: black;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
@@ -101,14 +103,14 @@ p {
   flex-direction: column;
 }
 
-#counter {
-}
-
-#canvasCoin{
-}
-
 #canvas {
   /* overflow: hidden; */
   background-color: white;
   border: 1px solid #F3C247;
+}
+
+#screen-four {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
 }
