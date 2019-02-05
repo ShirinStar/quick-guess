@@ -29,30 +29,30 @@ const randomWord = function(){
   const wordSpace = document.querySelector('#wordSpace');
   word = wordSpace.innerHTML + " → " + word;
   wordSpace.innerHTML = word.toUpperCase();
+}
 
+let timeLeft = 30;
+let counter = document.querySelector('#counter');
+let timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  console.log("counting")
+  if (timeLeft == 0) {
+    clearTimeout(timerId);
+    screenThree.style.display = "none";
+    screenFour.style.display = "block";
+  } else {
+    counter.innerHTML = timeLeft;
+    timeLeft--;
+  }
 }
 
 button2.addEventListener('click', function(){
   screenTwo.style.display= "none";
   screenThree.style.display = "block";
   randomWord();
+  countdown();
 })
-
-let timeLeft = 30;
-    let counter = document.querySelector('#counter');
-
-    let timerId = setInterval(countdown, 1000);
-
-    function countdown() {
-      if (timeLeft == 0) {
-        clearTimeout(timerId);
-        screenThree.style.display = "none";
-        screenFour.style.display = "block";
-      } else {
-        counter.innerHTML = timeLeft;
-        timeLeft--;
-      }
-    }
 
 ////////canvas 2/////
 /// tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas

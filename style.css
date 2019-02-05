@@ -111,6 +111,27 @@ p {
 
 #screen-four {
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 }
+
+#btnTwo {
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  margin-left: 45%;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  border: 2px solid #F3C247;
+  transition-duration: 0.4s;
+  padding: 4px;
+  width: 200px;
+  }
+
+  #btnTwo:hover {
+   background-color: #F3C247;
+   color: white;
+   cursor: pointer;
+  }
