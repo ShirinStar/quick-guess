@@ -141,7 +141,7 @@ let roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 
   context.lineJoin = 'round';
   context.lineCap = 'round';
   context.lineWidth = 8;
-  context.strokeStyle = '#fff';
+  context.strokeStyle = '#000';
 
   let isDrawing = false;
   let lastX = 0;

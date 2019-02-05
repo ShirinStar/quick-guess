@@ -98,13 +98,9 @@ p {
   cursor: pointer;
 }
 
-#third {
-  /* display: flex;
+#thirdScreen {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  position: sticky; */
 
 }
 
@@ -112,52 +108,28 @@ p {
 
 }
 
-/* h2 {
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 16px;
-  /* text-align: left; */
-
-
-/*
-#Close {
-  width: 20px;
-  /* float: left; */
-  /* border: 2px solid #F3C247;
-  transition-duration: 0.4s;
-}
-
-#Close:hover {
-  background-color: #F3C247;
-  cursor: pointer;
-}  */
-
-.general {
+/* .general {
   display: flex;
   flex-direction: column;
   margin-bottom: 15%;
   margin-top: 12%;
   margin-left: 25%;
   margin-right: 25%;
-}
+} */
 
-#drawing {
+/* #drawing {
 display: inline-flex;
 justify-content: space-around;
 align-items: center;
-}
+} */
 
 #canvasCoin{
- /* display: flex;
- flex-direction: column; */
- /* margin-bottom: 15%; */
- /* margin-top: 12%; */
- margin-left: 25%;
- margin-right: 25%;
+
 }
 
 #canvas {
   /* overflow: hidden; */
-  background-color: black;
+  background-color: white;
   /* align-items: center;
   justify-content: center; */
 }
