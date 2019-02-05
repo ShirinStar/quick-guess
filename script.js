@@ -25,6 +25,7 @@ function startTimer(duration, display) {
       display.textContent = seconds;
       if (--timer < 0) {
        timer = duration;
+       //starting to work on connecting to page four- user 2-->> 
         //if(timer === 0) {
       }
     }, 1000);
@@ -76,6 +77,7 @@ let lastX = 0;
 let lastY = 0;
 
 function draw(e){
+  //stop function if they're not mousedown
 if(!isDrawing)return;
   console.log(e);
   context.beginPath();
