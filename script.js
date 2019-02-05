@@ -1,6 +1,40 @@
 console.log('script conected!');
+
+const roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe' ]
+
+const button1 = document.querySelector('#btn');
+
+const button2 = document.querySelector('#btnReady');
+
+const screenOne = document.querySelector('#screen-one');
+
+const screenTwo = document.querySelector('#screen-two');
+
+const screenThree = document.querySelector('#screen-three');
+
+screenTwo.style.display = "none";
+screenThree.style.display = "none";
+
+button1.addEventListener('click', function(){
+  screenOne.style.display = "none";
+  screenTwo.style.display = "block";
+})
+
+const randomWord = function(){
+  let word = roulette[Math.floor(Math.random() * roulette.length +1)];
+  const wordSpace = document.querySelector('#wordSpace');
+  word = wordSpace.innerHTML + " " + word;
+  wordSpace.innerHTML = word;
+}
+
+button2.addEventListener('click', function(){
+  screenTwo.style.display= "none";
+  screenThree.style.display = "block";
+  randomWord();
+})
+
 //////////////
-///timer///
+///timer 1///
 ///////////
 //countdown from w3 tutorial https://www.w3schools.com/howto/howto_js_countdown.asp
 // let countDown = new Date("Jan 5, 2021 15:37:25").getTime();
@@ -16,121 +50,100 @@ console.log('script conected!');
 //   }
 // }, 1000);
 
+///timer 2///
 //countdown from stackoverflow tutorial: https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
-function startTimer(duration, display) {
-    let timer = duration, seconds;
-    setInterval(function () {
-      seconds = parseInt(timer % 60, 10);
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      display.textContent = seconds;
-      if (--timer < 0) {
-       timer = duration;
-       //starting to work on connecting to page four- user 2-->>
-        //if(timer === 0) {
-      }
-    }, 1000);
-}
-window.onload = function () {
-  let thirtySec = 10 * 3,
-  display = document.querySelector('#counter');
-  startTimer(thirtySec, display);
-};
-
-
-/////
-///////////////////
-////randomWords////
-//////////////
-let roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe' ]
-
-// let start = document.querySelector('#btnReady');
-// let wordSpace = document.querySelector('#wordSpace');
-//
-// //my button is a null...trying to load the DOM before moving on..
-// document.addEventListener('DOMContentLoaded', function() {
-//   start.addEventListener('click', (ev) => {
-//   //return start;
-//   //debugger;
-//   //console.log('click');
-//     let randomWord = Math.floor(Math.random() * roulette.length + 1);
-//     word = roulette[randomWord];
-//     wordSpace.innerHTML = word;
-//   })
-// })
-
-////////////////////////////////
-/////canvas//////////////
-//////////////////
-//tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
-
-// let canvas = document.querySelector('#canvas');
-// let context = canvas.getContext('2d');
-// prevX =0;
-// prevY = 0;
-// currX = 0;
-// currY = 0;
-// canvas.height = window.innerHeight / 1.3; //double assign?
-// canvas.width = window.innerWidth;
-// context.lineJoin = 'round';
-// context.lineCap = 'round';
-// context.lineWidth = 10;
-// context.strokeStyle = "#fff";
-//
-// let isDrawing = false;
-// let lastX = 0;
-// let lastY = 0;
-//
-// function draw(e){
-//   //stop function if they're not mousedown
-// if(!isDrawing)return;
-//   console.log(e);
-//   context.beginPath();
-//   context.moveTo(prevX, prevY);
-//   context.lineTo(currX, currY);
-//   context.stroke();
-//   context.closePath();
-//   // [lastX, lastY] = [e.offsetX, e.offsetY];
+// function startTimer(duration, display) {
+//     let timer = duration, seconds;
+//     setInterval(function () {
+//       seconds = parseInt(timer % 60, 10);
+//       seconds = seconds < 10 ? "0" + seconds : seconds;
+//       display.textContent = seconds;
+//       if (--timer < 0) {
+//        timer = duration;
+//        //starting to work on connecting to page four- user 2-->>
+//         //if(timer === 0) {
+//       }
+//     }, 1000);
 // }
+// window.onload = function () {
+//   let thirtySec = 10 * 3,
+//   display = document.querySelector('#counter');
+//   startTimer(thirtySec, display);
+// };
 //
-// canvas.addEventListener('mousedown', (e) => {
-//   isDrawing = true;
-//   [lastX, lastY] = [e.offsetX, e.offsetY];
-// });
 //
-// canvas.addEventListener('mousemove', draw);
-// canvas.addEventListener('mouseup', () => isDrawing = false);
-// canvas.addEventListener('mouseout', () => isDrawing = false);
-
-// this is from medium: https://medium.com/@jagadeshanh/html5-canvas-click-and-draw-f665e02f5744
-
-// let canvas = document.querySelector('#canvas');
-// let context = canvas.getContext('2d');
-// let height = canvas.height = window.innerHeight / 1.3; //double assign?
-// let width = canvas.width = window.innerWidth / 2;
-// let mouseClicked = false, mouseReleased = true;
-// document.addEventListener('click', onMouseClick, false);
-// document.addEventListener('mousemove', onMouseMove, false);
 //
-// function onMouseClick(e) {
-//     mouseClicked = !mouseClicked;
-// }
+// ////////////////////////////////
+// /////canvas 1//////////////
+// //////////////////
+// //tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
 //
-// function onMouseMove(e) {
-//     if (mouseClicked) {
-//         context.beginPath();
-//         context.moveTo(x,y);
-//         context.arc(e.clientX, e.clientY, 3.5, 0, Math.PI * 2, false);
-//         context.lineWidth = 4;
-//         context.fillStyle = "#fff";
-//         context.fill();
-//     }
-// }
-
-
-
+// // let canvas = document.querySelector('#canvas');
+// // let context = canvas.getContext('2d');
+// // prevX =0;
+// // prevY = 0;
+// // currX = 0;
+// // currY = 0;
+// // canvas.height = window.innerHeight / 1.3; //double assign?
+// // canvas.width = window.innerWidth;
+// // context.lineJoin = 'round';
+// // context.lineCap = 'round';
+// // context.lineWidth = 10;
+// // context.strokeStyle = "#fff";
+// //
+// // let isDrawing = false;
+// // let lastX = 0;
+// // let lastY = 0;
+// //
+// // function draw(e){
+// //   //stop function if they're not mousedown
+// // if(!isDrawing)return;
+// //   console.log(e);
+// //   context.beginPath();
+// //   context.moveTo(prevX, prevY);
+// //   context.lineTo(currX, currY);
+// //   context.stroke();
+// //   context.closePath();
+// //   // [lastX, lastY] = [e.offsetX, e.offsetY];
+// // }
+// //
+// // canvas.addEventListener('mousedown', (e) => {
+// //   isDrawing = true;
+// //   [lastX, lastY] = [e.offsetX, e.offsetY];
+// // });
+// //
+// // canvas.addEventListener('mousemove', draw);
+// // canvas.addEventListener('mouseup', () => isDrawing = false);
+// // canvas.addEventListener('mouseout', () => isDrawing = false);
+//
+// // this is from medium: https://medium.com/@jagadeshanh/html5-canvas-click-and-draw-f665e02f5744
+//
+// // let canvas = document.querySelector('#canvas');
+// // let context = canvas.getContext('2d');
+// // let height = canvas.height = window.innerHeight / 1.3; //double assign?
+// // let width = canvas.width = window.innerWidth / 2;
+// // let mouseClicked = false, mouseReleased = true;
+// // document.addEventListener('click', onMouseClick, false);
+// // document.addEventListener('mousemove', onMouseMove, false);
+// //
+// // function onMouseClick(e) {
+// //     mouseClicked = !mouseClicked;
+// // }
+// //
+// // function onMouseMove(e) {
+// //     if (mouseClicked) {
+// //         context.beginPath();
+// //         context.moveTo(x,y);
+// //         context.arc(e.clientX, e.clientY, 3.5, 0, Math.PI * 2, false);
+// //         context.lineWidth = 4;
+// //         context.fillStyle = "#fff";
+// //         context.fill();
+// //     }
+// // }
+//
+//
+//
 ////////canvas 2/////
-
-
 
   let canvas = document.querySelector('#canvas');
   // could be 3d, if you want to make a video game
@@ -167,83 +180,83 @@ let roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 
   canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
-
-
-// /////// canvas 3 //////
-//tutorial from https://codepen.io/medo001/pen/FIbza?editors=1010
-
-
-// let canvas = document.querySelector('#canvas');
-// let context = canvas.getContext('2d');
-// prevX =0;
-// prevY = 0;
-// currX = 0;
-// currY = 0;
-// canvas.height = window.innerHeight / 1.3; //double assign?
-// canvas.width = window.innerWidth;
-// context.lineJoin = 'round';
-// context.lineCap = 'round';
-// context.lineWidth = 8;
-// context.strokeStyle = "#fff";
-// let flag =false;
-//
-// let isDrawing = false;
-// let lastX = 0;
-// let lastY = 0;
-//
-// function draw(e){
-//   //stop function if they're not mousedown
-// // if(!isDrawing)return;
-//   console.log(e);
-//   context.beginPath();
-//   context.moveTo(prevX, prevY);
-//   context.lineTo(currX, currY);
-//   context.stroke();
-//   context.closePath();
-// }
-//
-// canvas.addEventListener('mousemove', function(e) {
-//       findxy('move', e)
-//   }, false);
-//
-//   canvas.addEventListener('mousedown', function(e) {
-//       findxy('down', e)
-//   }, false);
-//   canvas.addEventListener('mouseup', function(e) {
-//       findxy('up', e)
-//   }, false);
-//   canvas.addEventListener('mouseout', function(e) {
-//       findxy('out', e)
-//   }, false);
-//
-// function findxy(res, e) {
-//     if (res == 'down') {
-//         prevX = currX;
-//         prevY = currY;
-//         currX = e.clientX - canvas.offsetLeft;
-//         currY = e.clientY - canvas.offsetTop;
 //
 //
-//         flag = true;
-//         dot_flag = true;
-//         if (dot_flag) {
-//         context.beginPath();
-//         //context.fillStyle = x;
-//         context.fillRect(currX, currY, 2, 2);
-//         context.closePath();
-//         dot_flag = false;
-//       }
-//     }
-//     if (res == 'up' || res == "out") {
-//       flag = false;
-//     }
-//     if (res == 'move') {
-//       if (flag) {
-//         prevX = currX;
-//           prevY = currY;
-//           currX = e.clientX - canvas.offsetLeft;
-//           currY = e.clientY - canvas.offsetTop;
-//           draw();
-//         }
-//       }
-//     }
+// // /////// canvas 3 //////
+// //tutorial from https://codepen.io/medo001/pen/FIbza?editors=1010
+//
+//
+// // let canvas = document.querySelector('#canvas');
+// // let context = canvas.getContext('2d');
+// // prevX =0;
+// // prevY = 0;
+// // currX = 0;
+// // currY = 0;
+// // canvas.height = window.innerHeight / 1.3; //double assign?
+// // canvas.width = window.innerWidth;
+// // context.lineJoin = 'round';
+// // context.lineCap = 'round';
+// // context.lineWidth = 8;
+// // context.strokeStyle = "#fff";
+// // let flag =false;
+// //
+// // let isDrawing = false;
+// // let lastX = 0;
+// // let lastY = 0;
+// //
+// // function draw(e){
+// //   //stop function if they're not mousedown
+// // // if(!isDrawing)return;
+// //   console.log(e);
+// //   context.beginPath();
+// //   context.moveTo(prevX, prevY);
+// //   context.lineTo(currX, currY);
+// //   context.stroke();
+// //   context.closePath();
+// // }
+// //
+// // canvas.addEventListener('mousemove', function(e) {
+// //       findxy('move', e)
+// //   }, false);
+// //
+// //   canvas.addEventListener('mousedown', function(e) {
+// //       findxy('down', e)
+// //   }, false);
+// //   canvas.addEventListener('mouseup', function(e) {
+// //       findxy('up', e)
+// //   }, false);
+// //   canvas.addEventListener('mouseout', function(e) {
+// //       findxy('out', e)
+// //   }, false);
+// //
+// // function findxy(res, e) {
+// //     if (res == 'down') {
+// //         prevX = currX;
+// //         prevY = currY;
+// //         currX = e.clientX - canvas.offsetLeft;
+// //         currY = e.clientY - canvas.offsetTop;
+// //
+// //
+// //         flag = true;
+// //         dot_flag = true;
+// //         if (dot_flag) {
+// //         context.beginPath();
+// //         //context.fillStyle = x;
+// //         context.fillRect(currX, currY, 2, 2);
+// //         context.closePath();
+// //         dot_flag = false;
+// //       }
+// //     }
+// //     if (res == 'up' || res == "out") {
+// //       flag = false;
+// //     }
+// //     if (res == 'move') {
+// //       if (flag) {
+// //         prevX = currX;
+// //           prevY = currY;
+// //           currX = e.clientX - canvas.offsetLeft;
+// //           currY = e.clientY - canvas.offsetTop;
+// //           draw();
+// //         }
+// //       }
+// //     }

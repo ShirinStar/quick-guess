@@ -9,16 +9,27 @@
   </head>
 
   <body>
-    <div id="opening">
+    <div id="screen-one">
       <h1 id="logo">draw, guess, whatever!</h1>
       <p id="logline">A game for two.</p>
       <p id="secondLine">Draw - Guess - Switch - Repeat</p>
       <p>Rules:</p>
-      <a id="btn" href="secondScreenNew.html">Start?</a>
+      <button id="btn">Start?</button>
     </div>
 
-    <footer>
-      <!-- <img id="googleLogo" src="../quick-guess/google-logo.png" alt="google-logo"> -->
-    </footer>
+    <div id="screen-two">
+      <div id="user1">
+        <h1 id="player">player 1</h1>
+        <button id="btnReady"> READY? </button>
+      </div>
+    </div>
+
+    <div id="screen-three">
+        <p id="wordSpace">draw</p>
+        <p>you have <span id="counter"></span> seconds!</p>
+      <!-- <div id="canvasCoin"> -->
+        <canvas id="canvas">Please update your browser</canvas>
+    </div>
+
   </body>
 </html>

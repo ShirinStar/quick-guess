@@ -2,16 +2,15 @@ body{
 
 }
 
-#secondScreen{
-  background-color: black;
-}
-
-#opening {
+#screen-one {
   display: flex;
   flex-direction: column;
-  /* margin-top: 12%; */
   margin-left: 25%;
   margin-right: 25%;
+}
+
+#screen-two{
+  background-color: black;
 }
 
 h1 {
@@ -74,7 +73,6 @@ p {
 #user1 {
   display: flex;
   flex-direction: column;
-
 }
 
 #btnReady {
@@ -98,38 +96,19 @@ p {
   cursor: pointer;
 }
 
-#thirdScreen {
+#screen-three {
   display: flex;
   flex-direction: column;
-
 }
 
 #counter {
-
 }
 
-/* .general {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15%;
-  margin-top: 12%;
-  margin-left: 25%;
-  margin-right: 25%;
-} */
-
-/* #drawing {
-display: inline-flex;
-justify-content: space-around;
-align-items: center;
-} */
-
 #canvasCoin{
-
 }
 
 #canvas {
   /* overflow: hidden; */
   background-color: white;
-  /* align-items: center;
-  justify-content: center; */
+  border: 1px solid #F3C247;
 }
