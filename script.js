@@ -14,6 +14,8 @@ const screenTwo = document.querySelector('#screen-two');
 
 const threeA = document.querySelector('#threeA');
 
+const canvasOnly = document.querySelector('#threeA1');
+
 const threeB = document.querySelector('#threeB');
 
 const threeC = document.querySelector('#threeC');
@@ -22,6 +24,7 @@ let timerId;
 
 screenTwo.style.display = "none";
 threeA.style.display = "none";
+canvasOnly.style.display = "none";
 threeB.style.display = "none";
 threeC.style.display = "none";
 
@@ -46,6 +49,7 @@ function countdown() {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     threeA.style.display = "none";
+    canvasOnly.style.display = "none";
     threeB.style.display = "block";
     threeC.style.display = "none";
   } else {
@@ -57,6 +61,7 @@ function countdown() {
 button2.addEventListener('click', function(){
   screenTwo.style.display= "none";
   threeA.style.display = "block";
+  canvasOnly.style.display = "block";
   threeC.style.display = "none";
   threeB.style.display = "none";
   randomWord();
@@ -106,7 +111,8 @@ button2.addEventListener('click', function(){
 button3.addEventListener('click', function(){
   threeB.style.display = "none";
   threeC.style.display = "block";
-  threeA.style.display = "block";
+  threeA.style.display = "none";
+  canvasOnly.style.display = "block";
 
   })
 
