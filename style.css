@@ -1,4 +1,10 @@
+body{
 
+}
+
+#secondScreen{
+  background-color: black;
+}
 
 #opening {
   display: flex;
@@ -10,6 +16,18 @@
 
 h1 {
   font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  margin-left: 5%;
+  /* background-color: blue; */
+}
+
+#player {
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
   text-align: center;
   font-size: 100px;
   align-items: center;
@@ -66,8 +84,8 @@ p {
  margin-left: 45%;
  font-family: 'Shadows Into Light', cursive;
  font-size: 24px;
- background-color: white;
- color: black;
+ background-color: black;
+ color: white;
  border: 2px solid #F3C247;
  transition-duration: 0.4s;
  padding: 4px;
@@ -80,9 +98,38 @@ p {
   cursor: pointer;
 }
 
-#second {
-  text-align: center;
+#third {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  position: sticky;
+
 }
+
+#counter {
+
+}
+
+/* h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 16px;
+  /* text-align: left; */
+
+
+/*
+#Close {
+  width: 20px;
+  /* float: left; */
+  /* border: 2px solid #F3C247;
+  transition-duration: 0.4s;
+}
+
+#Close:hover {
+  background-color: #F3C247;
+  cursor: pointer;
+}  */
 
 .general {
   display: flex;
@@ -99,43 +146,11 @@ justify-content: space-around;
 align-items: center;
 }
 
-#imgClose {
-  width: 20px;
-  float: left;
-  border: 2px solid #F3C247;
-  transition-duration: 0.4s;
-}
 
-#imgClose:hover {
-  background-color: #F3C247;
-  cursor: pointer;
-}
-
-#imgRef {
-  width: 20px;
-  float: right;
-  border: 2px solid #F3C247;
-  transition-duration: 0.4s;
-}
-
-#imgRef:hover {
-  background-color: #F3C247;
-  cursor: pointer;
-}
-
-#window {
+#canvas {
   width: 400px;
   height: 400px;
   margin-bottom: 20px;
-  margin-left: 30%;
+  margin-left: 40%;
   border: 4px solid black;
-}
-
-#userGuess {
-  background-color: pink;
-  padding: 20px;
-}
-
-#userAnswer {
-  display: none;
 }

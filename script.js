@@ -7,6 +7,7 @@ const start = document.querySelector('#btnReady');
 const wordSpace = document.querySelector('#wordSpace');
 
 start.addEventListener('click', function(){
+  console.log('click');
   let randomWord = math.floor(math.random() * roulette.length + 1);
   let word = roulette[randomWord];
   wordSpace.innerHTML = word;
