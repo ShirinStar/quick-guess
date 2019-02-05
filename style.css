@@ -99,12 +99,12 @@ p {
 }
 
 #third {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  position: sticky;
+  position: sticky; */
 
 }
 
@@ -147,8 +147,8 @@ align-items: center;
 }
 
 #canvasCoin{
- display: flex;
- flex-direction: column;
+ /* display: flex;
+ flex-direction: column; */
  /* margin-bottom: 15%; */
  /* margin-top: 12%; */
  margin-left: 25%;

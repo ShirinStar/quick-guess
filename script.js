@@ -25,7 +25,7 @@ function startTimer(duration, display) {
       display.textContent = seconds;
       if (--timer < 0) {
        timer = duration;
-       //starting to work on connecting to page four- user 2-->> 
+       //starting to work on connecting to page four- user 2-->>
         //if(timer === 0) {
       }
     }, 1000);
@@ -63,38 +63,43 @@ let roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 
 //////////////////
 //tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
 
-let canvas = document.querySelector('#canvas');
-let context = canvas.getContext('2d');
-canvas.height = window.innerHeight / 1.3; //double assign?
-canvas.width = window.innerWidth;
-context.lineJoin = 'round';
-context.lineCap = 'round';
-context.lineWidth = 10;
-context.strokeStyle = "#fff";
-
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
-
-function draw(e){
-  //stop function if they're not mousedown
-if(!isDrawing)return;
-  console.log(e);
-  context.beginPath();
-  context.moveTo(e.offsetX, e.offsetY);
-  context.lineTo(e.offsetX, e.offsetY);
-  context.stroke();
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-}
-
-canvas.addEventListener('mousedown', (e) => {
-  isDrawing = true;
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-});
-
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+// let canvas = document.querySelector('#canvas');
+// let context = canvas.getContext('2d');
+// prevX =0;
+// prevY = 0;
+// currX = 0;
+// currY = 0;
+// canvas.height = window.innerHeight / 1.3; //double assign?
+// canvas.width = window.innerWidth;
+// context.lineJoin = 'round';
+// context.lineCap = 'round';
+// context.lineWidth = 10;
+// context.strokeStyle = "#fff";
+//
+// let isDrawing = false;
+// let lastX = 0;
+// let lastY = 0;
+//
+// function draw(e){
+//   //stop function if they're not mousedown
+// if(!isDrawing)return;
+//   console.log(e);
+//   context.beginPath();
+//   context.moveTo(prevX, prevY);
+//   context.lineTo(currX, currY);
+//   context.stroke();
+//   context.closePath();
+//   // [lastX, lastY] = [e.offsetX, e.offsetY];
+// }
+//
+// canvas.addEventListener('mousedown', (e) => {
+//   isDrawing = true;
+//   [lastX, lastY] = [e.offsetX, e.offsetY];
+// });
+//
+// canvas.addEventListener('mousemove', draw);
+// canvas.addEventListener('mouseup', () => isDrawing = false);
+// canvas.addEventListener('mouseout', () => isDrawing = false);
 
 // this is from medium: https://medium.com/@jagadeshanh/html5-canvas-click-and-draw-f665e02f5744
 
@@ -120,3 +125,125 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
 //         context.fill();
 //     }
 // }
+
+
+
+////////canvas 2/////
+
+
+
+  let canvas = document.querySelector('#canvas');
+  // could be 3d, if you want to make a video game
+  let context = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  context.lineJoin = 'round';
+  context.lineCap = 'round';
+  context.lineWidth = 8;
+  context.strokeStyle = '#fff';
+
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  function draw(e) {
+    // stop the function if they are not mouse down
+    if(!isDrawing) return;
+    //listen for mouse move event
+    console.log(e);
+    context.beginPath();
+    context.moveTo(lastX, lastY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', () => isDrawing = false);
+  canvas.addEventListener('mouseout', () => isDrawing = false);
+
+
+// /////// canvas 3 //////
+//tutorial from https://codepen.io/medo001/pen/FIbza?editors=1010
+
+
+// let canvas = document.querySelector('#canvas');
+// let context = canvas.getContext('2d');
+// prevX =0;
+// prevY = 0;
+// currX = 0;
+// currY = 0;
+// canvas.height = window.innerHeight / 1.3; //double assign?
+// canvas.width = window.innerWidth;
+// context.lineJoin = 'round';
+// context.lineCap = 'round';
+// context.lineWidth = 8;
+// context.strokeStyle = "#fff";
+// let flag =false;
+//
+// let isDrawing = false;
+// let lastX = 0;
+// let lastY = 0;
+//
+// function draw(e){
+//   //stop function if they're not mousedown
+// // if(!isDrawing)return;
+//   console.log(e);
+//   context.beginPath();
+//   context.moveTo(prevX, prevY);
+//   context.lineTo(currX, currY);
+//   context.stroke();
+//   context.closePath();
+// }
+//
+// canvas.addEventListener('mousemove', function(e) {
+//       findxy('move', e)
+//   }, false);
+//
+//   canvas.addEventListener('mousedown', function(e) {
+//       findxy('down', e)
+//   }, false);
+//   canvas.addEventListener('mouseup', function(e) {
+//       findxy('up', e)
+//   }, false);
+//   canvas.addEventListener('mouseout', function(e) {
+//       findxy('out', e)
+//   }, false);
+//
+// function findxy(res, e) {
+//     if (res == 'down') {
+//         prevX = currX;
+//         prevY = currY;
+//         currX = e.clientX - canvas.offsetLeft;
+//         currY = e.clientY - canvas.offsetTop;
+//
+//
+//         flag = true;
+//         dot_flag = true;
+//         if (dot_flag) {
+//         context.beginPath();
+//         //context.fillStyle = x;
+//         context.fillRect(currX, currY, 2, 2);
+//         context.closePath();
+//         dot_flag = false;
+//       }
+//     }
+//     if (res == 'up' || res == "out") {
+//       flag = false;
+//     }
+//     if (res == 'move') {
+//       if (flag) {
+//         prevX = currX;
+//           prevY = currY;
+//           currX = e.clientX - canvas.offsetLeft;
+//           currY = e.clientY - canvas.offsetTop;
+//           draw();
+//         }
+//       }
+//     }
