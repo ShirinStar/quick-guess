@@ -14,6 +14,8 @@ const screenThree = document.querySelector('#screen-three');
 
 const screenFour = document.querySelector('#screen-four');
 
+let timerId;
+
 screenTwo.style.display = "none";
 screenThree.style.display = "none";
 screenFour.style.display = "none";
@@ -31,13 +33,14 @@ const randomWord = function(){
   wordSpace.innerHTML = word.toUpperCase();
 }
 
-let timeLeft = 30;
+let timeLeft = 3;
 let counter = document.querySelector('#counter');
-let timerId = setInterval(countdown, 1000);
+
 
 function countdown() {
   console.log("counting")
-  if (timeLeft == 0) {
+  if (timeLeft === 0) {
+    counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     screenThree.style.display = "none";
     screenFour.style.display = "block";
@@ -52,6 +55,7 @@ button2.addEventListener('click', function(){
   screenThree.style.display = "block";
   randomWord();
   countdown();
+  timerId = setInterval(countdown, 1000);
 })
 
 ////////canvas 2/////
