@@ -148,9 +148,6 @@ align-items: center;
 
 
 #canvas {
-  width: 400px;
-  height: 400px;
-  margin-bottom: 20px;
-  margin-left: 40%;
-  border: 4px solid black;
+  overflow: hidden;
+  background-color: black;
 }

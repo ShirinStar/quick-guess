@@ -1,5 +1,21 @@
 console.log('script conected!');
 
+///timer///
+
+//countdown from w3 tutorial https://www.w3schools.com/howto/howto_js_countdown.asp
+// let countDown = new Date("Jan 5, 2021 15:37:25").getTime();
+// let updateCount = setInterval(function() {
+// let now = new Date().getTime();
+// let distance = countDown - now;
+// let seconds = Math.floor((distance % (1000 * 21)) / 1000);
+// // Output the result in an element with id="counter"
+// document.querySelector("#counter").innerHTML = seconds + " seconds ";
+// if (distance < 0) {
+// clearInterval(updateCount);
+// document.querySelector("#counter").innerHTML = "time's up";
+//   }
+// }, 1000);
+
 //countdown from stackoverflow tutorial: https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
 function startTimer(duration, display) {
     let timer = duration, seconds;
@@ -19,6 +35,8 @@ window.onload = function () {
 };
 /////
 
+////randomWords////
+
 let roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe' ]
 
 let start = document.querySelector('#btnReady');
@@ -36,16 +54,26 @@ start.addEventListener('click', (ev) => {
 })
 })
 
-//countdown from w3 tutorial https://www.w3schools.com/howto/howto_js_countdown.asp
-// let countDown = new Date("Jan 5, 2021 15:37:25").getTime();
-// let updateCount = setInterval(function() {
-// let now = new Date().getTime();
-// let distance = countDown - now;
-// let seconds = Math.floor((distance % (1000 * 21)) / 1000);
-// // Output the result in an element with id="counter"
-// document.querySelector("#counter").innerHTML = seconds + " seconds ";
-// if (distance < 0) {
-// clearInterval(updateCount);
-// document.querySelector("#counter").innerHTML = "time's up";
-//   }
-// }, 1000);
+/////canvas////
+
+let canvas = document.querySelector('#canvas');
+let context = canvas.getContext('2d');
+let height = canvas.height = window.innerHeight; //double assign?
+let width = canvas.width = window.innerWidth;
+let mouseClicked = false, mouseReleased = true;
+document.addEventListener('click', onMouseClick, false);
+document.addEventListener('mousemove', onMouseMove, false);
+
+function onMouseClick(e) {
+    mouseClicked = !mouseClicked;
+}
+
+function onMouseMove(e) {
+    if (mouseClicked) {
+        context.beginPath();
+        context.arc(e.clientX, e.clientY, 3, 0, Math.PI * 2, false);
+        context.lineWidth = 3;
+        context.fillStyle = "#fff";
+        context.fill();
+    }
+}
