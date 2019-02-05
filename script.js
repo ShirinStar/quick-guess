@@ -6,6 +6,8 @@ const button1 = document.querySelector('#btn');
 
 const button2 = document.querySelector('#btnReady');
 
+const button3 = document.querySelector('#btnTwo');
+
 const screenOne = document.querySelector('#screen-one');
 
 const screenTwo = document.querySelector('#screen-two');
@@ -14,12 +16,14 @@ const screenThree = document.querySelector('#screen-three');
 
 const screenFour = document.querySelector('#screen-four');
 
+const screenFive = document.querySelector('#screen-five');
+
 let timerId;
 
 screenTwo.style.display = "none";
 screenThree.style.display = "none";
 screenFour.style.display = "none";
-
+screenFive.style.display = "none";
 
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
@@ -35,7 +39,6 @@ const randomWord = function(){
 
 let timeLeft = 3;
 let counter = document.querySelector('#counter');
-
 
 function countdown() {
   console.log("counting")
@@ -97,10 +100,12 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
-/////
+button3.addEventListener('click', function(){
+  screenFour.style.display = "none";
+  screenFive.style.display = "block";
+  canvas.style.display = "block";
 
-
-
+  })
 
 
 
