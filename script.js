@@ -113,7 +113,6 @@ button3.addEventListener('click', function(){
   threeC.style.display = "block";
   threeA.style.display = "none";
   canvasOnly.style.display = "block";
-
   })
 
 
