@@ -109,10 +109,11 @@ p {
   border: 1px solid #F3C247;
 }
 
-#screen-four {
+#threeB{
   background-color: black;
   width: 100vw;
   height: 100vh;
+  display: none;
 }
 
 #btnTwo {
@@ -136,11 +137,12 @@ p {
    cursor: pointer;
   }
 
-  #screen-five {
+  #threeC {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    display: none;
   }
 
   #guess {

@@ -12,18 +12,18 @@ const screenOne = document.querySelector('#screen-one');
 
 const screenTwo = document.querySelector('#screen-two');
 
-const screenThree = document.querySelector('#screen-three');
+const threeA = document.querySelector('#threeA');
 
-const screenFour = document.querySelector('#screen-four');
+const threeB = document.querySelector('#threeB');
 
-const screenFive = document.querySelector('#screen-five');
+const threeC = document.querySelector('#threeC');
 
 let timerId;
 
 screenTwo.style.display = "none";
-screenThree.style.display = "none";
-screenFour.style.display = "none";
-screenFive.style.display = "none";
+threeA.style.display = "none";
+threeB.style.display = "none";
+threeC.style.display = "none";
 
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
@@ -45,8 +45,9 @@ function countdown() {
   if (timeLeft === 0) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
-    screenThree.style.display = "none";
-    screenFour.style.display = "block";
+    threeA.style.display = "none";
+    threeB.style.display = "block";
+    threeC.style.display = "none";
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -55,7 +56,9 @@ function countdown() {
 
 button2.addEventListener('click', function(){
   screenTwo.style.display= "none";
-  screenThree.style.display = "block";
+  threeA.style.display = "block";
+  threeC.style.display = "none";
+  threeB.style.display = "none";
   randomWord();
   countdown();
   timerId = setInterval(countdown, 1000);
@@ -101,9 +104,9 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
 button3.addEventListener('click', function(){
-  screenFour.style.display = "none";
-  screenFive.style.display = "block";
-  canvas.style.display = "block";
+  threeB.style.display = "none";
+  threeC.style.display = "block";
+  threeA.style.display = "block";
 
   })
 
