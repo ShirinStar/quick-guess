@@ -268,9 +268,8 @@ h1 {
   /* overflow: hidden; */
   background-color: white;
   border: 2px dotted #5921C2;
-  width: 1050px;
-  height: 650px;
-  margin-left: 20%;
+  display: block;
+  margin: 0 auto;
 }
 
 #popAlert {

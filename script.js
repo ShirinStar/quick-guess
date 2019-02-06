@@ -118,8 +118,9 @@ button2.addEventListener('click', function(){
   let canvas = document.querySelector('#canvas');
   // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = 800
+  canvas.height = 600
+  console.log(window.innerWidth);
 
   context.lineJoin = 'round';
   context.lineCap = 'round';
