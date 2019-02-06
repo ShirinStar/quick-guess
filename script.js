@@ -1,6 +1,6 @@
 console.log('script conected!');
 
-const roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe' ]
+const roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe', 'lion', 'kiss', 'holding-hands', 'coffee', 'breakfast', 'phone', 'tea', 'pen', 'train', 'robot', 'email', 'dance', 'teacher', 'floor-lamp', 'power-socket', 'strawberry', 'blueberry', 'pizza', 'french-fries', 'sky', 'harmony', 'street', 'sunday', 'rocket', 'superhero', 'hamburger', 'clock', 'naked', 'attention', 'nobody', 'shelter', 'trump', 'war', 'island', 'beach', 'football', 'mosquito', 'rat', 'trash', 'grapes', 'maybe', 'starting-point', 'button', 'box', 'empty', 'elevator', 'out-of-space', 'burrito', 'ramen-soup', 'headphones', 'park', 'homeless', 'cheese', 'tent', 'bed', 'birthday', 'font', 'text', 'work', 'internet']
 
 //allowing me to pull the randomWord easily
 let currentWord;
@@ -147,7 +147,6 @@ button2.addEventListener('click', function(){
 //////end of Canvas //////
 
 //moving to second player!
-
 button3.addEventListener('click', function(){
   view = 'win screen';
   timerId = setInterval(function(){countdown(counter2)}, 1000);
@@ -183,13 +182,12 @@ buttonGuess.addEventListener('click', function(){
     finalLose.innerHTML = wordLose.toUpperCase();
   }
 })
-
+//refreshing
 buttonRoundWin.addEventListener('click', function() {
   screenOne.style.display = "block";
   win.style.display = "none";
   location.reload();
 })
-
 buttonRoundLose.addEventListener('click', function() {
   screenOne.style.display = "block";
   lose.style.display = "none";

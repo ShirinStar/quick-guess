@@ -1,19 +1,54 @@
 body{
+}
 
+p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: pink; */
 }
 
 #screen-one {
   display: flex;
   flex-direction: column;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-image: url('https://media.giphy.com/media/QJIR2I3gIAo5A44q09/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  /* width: 100vw;
+  height: 100vh; */
 }
 
-#screen-two{
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
+#logo{
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  margin-left: 5%;
+  margin-bottom: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  animation-name: space-logo;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 4s;
 }
+
+@keyframes space-logo {
+  0% {
+     color: white;
+     margin-bottom: -20px;
+   }
+   20% {
+    letter-spacing: 20px;
+   }
+ }
 
 h1 {
   font-family: 'Shadows Into Light', cursive;
@@ -26,6 +61,152 @@ h1 {
   /* background-color: blue; */
 }
 
+#rules {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  /* border: 2px dotted #53E7C2; */
+  width: 300px;
+  margin-left: 27%;
+  margin-top: 0;
+  padding: 6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation-name: rulesPlayers;
+  opacity: 0;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  /* background-color: pink; */
+}
+
+@keyframes rulesPlayers {
+  20% {
+    opacity: 0;
+   }
+   40% {
+     opacity: 0.25;
+   }
+  60% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#logline {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  animation-name: logline1;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+@keyframes logline1 {
+  20% {
+    opacity: 0;
+   }
+   40%{
+     opacity: 0.25;
+   }
+  60% {
+    opacity: 0.75;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#secondLine {
+  /* margin-bottom: 40px; */
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
+  opacity: 0;
+  animation-name: secondLine1;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+@keyframes secondLine1 {
+  20% {
+    opacity: 0;
+   }
+   40%{
+     opacity: 0.25;
+   }
+  60% {
+    opacity: 0.75;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#btn {
+ text-decoration: none;
+ text-align: center;
+ align-items: center;
+ margin-top: 10px;
+ margin-left: 32%;
+ font-family: 'Shadows Into Light', cursive;
+ font-size: 24px;
+ background-color: white;
+ color: black;
+ border: 2px solid #F3C247;
+ transition-duration: 0.4s;
+ padding: 4px;
+ width: 250px;
+ animation-name: buttonFirst;
+ animation-timing-function: ease-in;
+ opacity: 0;
+ animation-iteration-count: 1;
+ animation-fill-mode: forwards;
+ animation-duration: 4s;
+ animation-delay: 2s;
+}
+
+@keyframes buttonFirst {
+  20% {
+    opacity: 0;
+   }
+   40%{
+     opacity: 0;
+   }
+  60% {
+    opacity: 0;
+  }
+  90%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#btn:hover {
+  background-color: #F3C247;
+  color: white;
+  cursor: pointer;
+}
+
+#screen-two{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
 #player {
   font-family: 'Shadows Into Light', cursive;
   color: white;
@@ -36,40 +217,6 @@ h1 {
   margin-top: 15%;
   margin-left: 5%;
   /* background-color: blue; */
-}
-
-p {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 18px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* background-color: pink; */
-}
-
-#secondLine {
-  margin-bottom: 40px;
-}
-
-#btn {
- text-decoration: none;
- text-align: center;
- align-items: center;
- margin-left: 35%;
- font-family: 'Shadows Into Light', cursive;
- font-size: 24px;
- background-color: white;
- color: black;
- border: 2px solid #F3C247;
- transition-duration: 0.4s;
- padding: 4px;
- width: 250px;
-}
-
-#btn:hover {
-  background-color: #F3C247;
-  color: white;
-  cursor: pointer;
 }
 
 #user1 {
