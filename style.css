@@ -256,8 +256,8 @@ h1 {
 }
 
 #screen-three {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 #threeA{
