@@ -29,7 +29,9 @@ const lose = document.querySelector('#youLose');
 
 const buttonGuess = document.querySelector('#guessInput');
 
-const buttonRound = document.querySelector('#round')
+const buttonRoundWin = document.querySelector('#roundOne');
+
+const buttonRoundLose = document.querySelector('#roundTwo');
 
 let view = 'ready player two';
 
@@ -47,7 +49,6 @@ threeB.style.display = "none";
 threeC.style.display = "none";
 win.style.display = "none";
 lose.style.display = "none";
-
 
   //button1 starting
 button1.addEventListener('click', function(){
@@ -101,6 +102,7 @@ button2.addEventListener('click', function(){
   threeC.style.display = "none";
   threeB.style.display = "none";
   randomWord();
+  //this allow me to run counter within the function without interfering with what is 'block' or 'none'
   view = 'ready player two'
   countdown(counter1);
   timerId = setInterval(function(){countdown(counter1)}, 1000);
@@ -157,8 +159,6 @@ button3.addEventListener('click', function(){
   //canvas.removeEventListener('mousedown', draw, true);
   })
 
-
-
 //player2 guess- press input//
 let final = document.querySelector('#wordSpaceTwo');
 let finalLose = document.querySelector('#wordSpaceThree');
@@ -167,7 +167,7 @@ let input = document.querySelector('#guess');
 buttonGuess.addEventListener('click', function(){
   //clearTime
   clearTimeout(timerId);
-  //equal word by uppercase even to just in case
+  //equal word by uppercase - to make sure that they will always be equal
   if (input.value.toUpperCase() === currentWord.toUpperCase()){
     //console.log('you were correct');
     let finalWord = final.innerHTML + " " + currentWord;
@@ -175,11 +175,6 @@ buttonGuess.addEventListener('click', function(){
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    buttonRound.addEventListener('click', function() {
-      screenOne.style.display = "block";
-      win.style.display = "none";
-      location.reload();
-    })
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
@@ -189,8 +184,17 @@ buttonGuess.addEventListener('click', function(){
   }
 })
 
+buttonRoundWin.addEventListener('click', function() {
+  screenOne.style.display = "block";
+  win.style.display = "none";
+  location.reload();
+})
 
-
+buttonRoundLose.addEventListener('click', function() {
+  screenOne.style.display = "block";
+  lose.style.display = "none";
+  location.reload();
+})
 
 
 
