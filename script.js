@@ -33,6 +33,8 @@ const buttonRoundWin = document.querySelector('#roundOne');
 
 const buttonRoundLose = document.querySelector('#roundTwo');
 
+const alert = document.querySelector('#alert');
+
 let view = 'ready player two';
 
 let timerId;
@@ -49,6 +51,7 @@ threeB.style.display = "none";
 threeC.style.display = "none";
 win.style.display = "none";
 lose.style.display = "none";
+alert.style.display = "none";
 
   //button1 starting
 button1.addEventListener('click', function(){
