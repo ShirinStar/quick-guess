@@ -74,6 +74,7 @@ function counterView() {
     canvasOnly.style.display = "none";
     threeB.style.display = "block";
     threeC.style.display = "none";
+    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";

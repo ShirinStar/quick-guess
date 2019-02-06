@@ -1,6 +1,6 @@
 body{
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 p {
@@ -288,7 +288,7 @@ h1 {
    animation-delay: 5s;
   /* animation: slide 1s forwards; */
   animation-timing-function: ease-in;
-  animation-iteration-count: 1; 
+  animation-iteration-count: 1;
   /* animation-fill-mode: forwards; */
 }
 
@@ -305,7 +305,9 @@ h1 {
 
 
 #threeB{
-  background-color: black;
+  background-color: #5921C2;
+  margin-top: 0;
+  margin-left: 0;
   width: 100vw;
   height: 100vh;
   display: none;
@@ -315,7 +317,8 @@ h1 {
   text-decoration: none;
   text-align: center;
   align-items: center;
-  margin-left: 45%;
+  margin-left: 44%;
+  margin-top: 5%;
   font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
   background-color: black;
@@ -327,9 +330,10 @@ h1 {
   }
 
   #btnTwo:hover {
-   background-color: #F3C247;
-   color: white;
-   cursor: pointer;
+    background-color: #5921C2;
+    border: 2px solid #F3C247;
+    color: white;
+    cursor: pointer;
   }
 
   #threeC {
