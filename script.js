@@ -86,6 +86,7 @@ function counterView() {
 let timeLeft = 10;
 //////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
+  alert.style.display = "block";
   //console.log("counting")
   if (timeLeft === 0) {
     counter.innerHTML = timeLeft;

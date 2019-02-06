@@ -273,6 +273,37 @@ h1 {
   margin-left: 20%;
 }
 
+#popAlert {
+  font-family:'Shadows Into Light', cursive;
+  font-size: 64px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  text-align: center;
+  top: 20%;
+  transform: translate(-70%, -70%);
+  width: 100%;
+  animation-name: alertCome 5s linear;
+  -webkit-animation: alertCome 5s;
+  /* -webkit-animation-delay: 5s; */
+   animation-delay: 5s;
+  /* animation: slide 1s forwards; */
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1; 
+  /* animation-fill-mode: forwards; */
+}
+
+@keyframes alertCome {
+  from {
+    margin-left: -180%;
+    /* width: 300%; */
+}
+  to {
+    margin-left: 200%;
+    /* width:100%; */
+  }
+}
+
+
 #threeB{
   background-color: black;
   width: 100vw;
