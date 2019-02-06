@@ -38,6 +38,7 @@ let counter1 = document.querySelector('#counter1');
 
 let counter2 = document.querySelector('#counter2');
 
+//general hidding
 screenTwo.style.display = "none";
 threeA.style.display = "none";
 canvasOnly.style.display = "none";
@@ -46,11 +47,13 @@ threeC.style.display = "none";
 win.style.display = "none";
 lose.style.display = "none";
 
+//button1 starting
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
   screenTwo.style.display = "block";
 })
 
+//button1-> player 1 -> activate random word
 const randomWord = function(){
   currentWord = roulette[Math.floor(Math.random() * roulette.length +1)];
   const wordSpace = document.querySelector('#wordSpace');
@@ -58,7 +61,7 @@ const randomWord = function(){
   wordSpace.innerHTML = word.toUpperCase();
 }
 
-let timeLeft = 5;
+let timeLeft = 10;
 
 function counterView() {
   if (view === "ready player two"){
@@ -79,7 +82,7 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 5
+    timeLeft = 10;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -101,7 +104,6 @@ button2.addEventListener('click', function(){
 
 ////////canvas 2/////
 /// tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
-
   let canvas = document.querySelector('#canvas');
   // could be 3d, if you want to make a video game
   let context = canvas.getContext('2d');
@@ -133,12 +135,12 @@ button2.addEventListener('click', function(){
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
   });
-
   canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
+//////end of Canvas //////
 
-////
+//moving to second player!
 button3.addEventListener('click', function(){
   view = 'win screen';
   timerId = setInterval(function(){countdown(counter2)}, 1000);
@@ -146,21 +148,31 @@ button3.addEventListener('click', function(){
   threeC.style.display = "block";
   threeA.style.display = "none";
   canvasOnly.style.display = "block";
+
+  //canvas.removeEventListener('mousedown', draw, true);
   })
 
+//player2 guess- press input//
+let final = document.querySelector('#wordSpaceTwo');
+let finalLose = document.querySelector('#wordSpaceThree');
 let input = document.querySelector('#guess');
 buttonGuess.addEventListener('click', function(){
+  //clearTime
   clearTimeout(timerId);
+  //equal word by uppercase even to just in case
   if (input.value.toUpperCase() === currentWord.toUpperCase()){
     //console.log('you were correct');
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-
+    let finalWord = final.innerHTML + " " + currentWord;
+    final.innerHTML = finalWord.toUpperCase();
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    let wordLose = finalLose.innerHTML + " " + currentWord;
+    finalLose.innerHTML = wordLose.toUpperCase();
   }
 })
 
