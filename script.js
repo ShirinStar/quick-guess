@@ -22,15 +22,29 @@ const threeB = document.querySelector('#threeB');
 
 const threeC = document.querySelector('#threeC');
 
+const win = document.querySelector('#youWon');
+
+const lose = document.querySelector('#youLose');
+
 const buttonGuess = document.querySelector('#guessInput');
 
+const buttonRound = document.querySelector('#round')
+
+let view = 'ready player two';
+
 let timerId;
+
+let counter1 = document.querySelector('#counter1');
+
+let counter2 = document.querySelector('#counter2');
 
 screenTwo.style.display = "none";
 threeA.style.display = "none";
 canvasOnly.style.display = "none";
 threeB.style.display = "none";
 threeC.style.display = "none";
+win.style.display = "none";
+lose.style.display = "none";
 
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
@@ -44,18 +58,28 @@ const randomWord = function(){
   wordSpace.innerHTML = word.toUpperCase();
 }
 
-let timeLeft = 15;
-let counter = document.querySelector('#counter');
+let timeLeft = 5;
 
-function countdown() {
-  console.log("counting")
-  if (timeLeft === 0) {
-    counter.innerHTML = timeLeft;
-    clearTimeout(timerId);
+function counterView() {
+  if (view === "ready player two"){
     threeA.style.display = "none";
     canvasOnly.style.display = "none";
     threeB.style.display = "block";
     threeC.style.display = "none";
+  } else {
+    lose.style.display = "block";
+    threeC.style.display = "none";
+    canvasOnly.style.display = "none";
+  }
+}
+
+function countdown(counter) {
+  console.log("counting")
+  if (timeLeft === 0) {
+    counter.innerHTML = timeLeft;
+    clearTimeout(timerId);
+    counterView();
+    timeLeft = 5
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -69,8 +93,10 @@ button2.addEventListener('click', function(){
   threeC.style.display = "none";
   threeB.style.display = "none";
   randomWord();
-  countdown();
-  timerId = setInterval(countdown, 1000);
+  view = 'ready player two'
+  countdown(counter1);
+  timerId = setInterval(function(){countdown(counter1)}, 1000);
+
 })
 
 ////////canvas 2/////
@@ -112,22 +138,29 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
+////
 button3.addEventListener('click', function(){
+  view = 'win screen';
+  timerId = setInterval(function(){countdown(counter2)}, 1000);
   threeB.style.display = "none";
   threeC.style.display = "block";
   threeA.style.display = "none";
   canvasOnly.style.display = "block";
   })
 
-
 let input = document.querySelector('#guess');
 buttonGuess.addEventListener('click', function(){
+  clearTimeout(timerId);
   if (input.value.toUpperCase() === currentWord.toUpperCase()){
-    console.log('you were correct');
-    screenOne.style.display = "block";
+    //console.log('you were correct');
+    win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
 
+  } else {
+    lose.style.display = "block";
+    threeC.style.display = "none";
+    canvasOnly.style.display = "none";
   }
 })
 

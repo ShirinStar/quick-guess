@@ -175,3 +175,67 @@ p {
     padding: 1px;
     width: 180px;
   }
+
+  #youWon {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #wining{
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    margin-left: 5%;
+  }
+
+  #youLose {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #losing {
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    margin-left: 5%;
+  }
+
+  #round {
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    margin-left: 45%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+    border: 2px solid #F3C247;
+    transition-duration: 0.4s;
+    padding: 4px;
+    width: 200px;
+  }
+
+  #round:hover {
+    background-color: #F3C247;
+    color: white;
+    cursor: pointer;
+  }
+
+  #wordSpaceTwo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
