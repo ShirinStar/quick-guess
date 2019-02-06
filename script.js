@@ -73,6 +73,8 @@ function counterView() {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    let wordLose = finalLose.innerHTML + " " + currentWord;
+    finalLose.innerHTML = wordLose.toUpperCase();
   }
 }
 
