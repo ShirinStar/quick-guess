@@ -2,6 +2,7 @@ console.log('script conected!');
 
 const roulette = ['adult', 'animal', 'apple', 'art', 'artist', 'attorney', 'arm', 'American', 'article', 'bank', 'baby', 'bag', 'ball', 'bank', 'bar', 'black', 'blood', 'body', 'book', 'box', 'banana', 'boy', 'building', 'cancer', 'car', 'card', 'cell', 'center', 'chair', 'child', 'church', 'cold', 'computer', 'country', 'couple', 'crime', 'cup', 'cut', 'dark', 'dead', 'degree', 'dog', 'cat', 'door', 'down', 'draw', 'dream', 'drug', 'eat', 'eight', 'everybody', 'eye', 'face', 'family', 'father', 'film', 'finger', 'fire', 'first', 'fish', 'five', 'floor', 'follow', 'food', 'friend', 'game', 'garden', 'girl', 'gun', 'guy', 'hair', 'half', 'hand', 'happy', 'hear', 'heart', 'heavy', 'here', 'hit', 'hospital', 'image', 'key', 'kid', 'language', 'laugh', 'letter', 'light', 'list', 'long', 'live', 'love', 'low', 'machine', 'man', 'marriage', 'memory', 'money', 'morning', 'mouth', 'ear', 'movie', 'network', 'newspaper', 'night', 'nothing', 'number', 'ok', 'open', 'painting', 'paper', 'party', 'phone', 'piece', 'picture', 'plane', 'police', 'radio', 'room', 'sea', 'skull', 'somebody', 'size', 'song', 'star', 'moon', 'sun', 'black-hole', 'step','time', 'top', 'tree', 'flower', 'bee', 'cow', 'horse', 'monkey', 'zebra', 'TV', 'up', 'wait', 'wall', 'water', 'white', 'window', 'wish', 'woman', 'world', 'yes', 'no', 'elephant', 'giraffe' ]
 
+//allowing me to pull the randomWord easily
 let currentWord;
 
 const button1 = document.querySelector('#btn');
@@ -61,8 +62,7 @@ const randomWord = function(){
   wordSpace.innerHTML = word.toUpperCase();
 }
 
-let timeLeft = 10;
-
+//changing screening when moving "screens" in player2 to avoid counter problems
 function counterView() {
   if (view === "ready player two"){
     threeA.style.display = "none";
@@ -77,9 +77,11 @@ function counterView() {
     finalLose.innerHTML = wordLose.toUpperCase();
   }
 }
-
+//globel time
+let timeLeft = 10;
+//////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
-  console.log("counting")
+  //console.log("counting")
   if (timeLeft === 0) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
@@ -90,7 +92,7 @@ function countdown(counter) {
     timeLeft--;
   }
 }
-
+//starting player one fun part
 button2.addEventListener('click', function(){
   screenTwo.style.display= "none";
   threeA.style.display = "block";
@@ -101,7 +103,6 @@ button2.addEventListener('click', function(){
   view = 'ready player two'
   countdown(counter1);
   timerId = setInterval(function(){countdown(counter1)}, 1000);
-
 })
 
 ////////canvas 2/////
