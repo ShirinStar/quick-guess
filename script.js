@@ -48,13 +48,14 @@ threeC.style.display = "none";
 win.style.display = "none";
 lose.style.display = "none";
 
-//button1 starting
+
+  //button1 starting
 button1.addEventListener('click', function(){
   screenOne.style.display = "none";
   screenTwo.style.display = "block";
 })
 
-//button1-> player 1 -> activate random word
+//the logic of button1-> player 1 -> activate random word
 const randomWord = function(){
   currentWord = roulette[Math.floor(Math.random() * roulette.length +1)];
   const wordSpace = document.querySelector('#wordSpace');
@@ -86,13 +87,13 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 10;
+    timeLeft = 5;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
   }
 }
-//starting player one fun part
+//starting player one FUN part
 button2.addEventListener('click', function(){
   screenTwo.style.display= "none";
   threeA.style.display = "block";
@@ -105,10 +106,10 @@ button2.addEventListener('click', function(){
   timerId = setInterval(function(){countdown(counter1)}, 1000);
 })
 
-////////canvas 2/////
+////////canvas/////
 /// tutorial from here: http://www.mattmorgante.com/technology/javascript-draw-html5-canvas
   let canvas = document.querySelector('#canvas');
-  // could be 3d, if you want to make a video game
+  // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -144,6 +145,7 @@ button2.addEventListener('click', function(){
 //////end of Canvas //////
 
 //moving to second player!
+
 button3.addEventListener('click', function(){
   view = 'win screen';
   timerId = setInterval(function(){countdown(counter2)}, 1000);
@@ -155,21 +157,29 @@ button3.addEventListener('click', function(){
   //canvas.removeEventListener('mousedown', draw, true);
   })
 
+
+
 //player2 guess- press input//
 let final = document.querySelector('#wordSpaceTwo');
 let finalLose = document.querySelector('#wordSpaceThree');
 let input = document.querySelector('#guess');
+
 buttonGuess.addEventListener('click', function(){
   //clearTime
   clearTimeout(timerId);
   //equal word by uppercase even to just in case
   if (input.value.toUpperCase() === currentWord.toUpperCase()){
     //console.log('you were correct');
+    let finalWord = final.innerHTML + " " + currentWord;
+    final.innerHTML = finalWord.toUpperCase();
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    let finalWord = final.innerHTML + " " + currentWord;
-    final.innerHTML = finalWord.toUpperCase();
+    buttonRound.addEventListener('click', function() {
+      screenOne.style.display = "block";
+      win.style.display = "none";
+      location.reload();
+    })
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
