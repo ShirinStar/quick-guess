@@ -181,7 +181,7 @@ canvas.addEventListener('touchend', function(e){
 }, false);
 
 function getTouchPos(canvasDom, touchEvent) {
-  let rect = canvasDom.getBoundingClientREct();
+  let rect = canvasDom.getBoundingClientRect();
   return{
     x: touchEvent.touches[0].clientX-rect.left,
     y: touchEvent.touches[0].clientY-rect.top
