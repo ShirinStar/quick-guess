@@ -132,13 +132,15 @@ button2.addEventListener('click', function(){
   let isDrawing = false;
   let lastX = 0;
   let lastY = 0;
+  let touchX = 0;
+  let touchY = 0;
 
   function draw(e) {
     if (player1 === 1){
     // stop the function if they are not mouse down
     if(!isDrawing) return;
     //listen for mouse move event
-    console.log(e);
+    //console.log(e);
     context.beginPath();
     context.moveTo(lastX, lastY);
     context.lineTo(e.offsetX, e.offsetY);
@@ -157,7 +159,9 @@ button2.addEventListener('click', function(){
 ///touchscreen
   canvas.addEventListener('touchstart', function (e) {
     isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    touchX = touch.pageX-touch.target.offestX;
+    touchY = touch.pageY-touch.target.offsetY;
+    // [touchX, touchY] = [e.offsetX, e.offsetY];
   });
   canvas.addEventListener('touchend', () => isDrawing = false);
   canvas.addEventListener('touchmove', () => isDrawing = false);
