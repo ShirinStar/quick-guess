@@ -90,7 +90,7 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 20;
+    timeLeft = 15;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -126,7 +126,7 @@ button2.addEventListener('click', function(){
   }
   context.lineJoin = 'round';
   context.lineCap = 'round';
-  context.lineWidth = 8;
+  context.lineWidth = 6;
   context.strokeStyle = '#000';
 
   let isDrawing = false;
@@ -156,46 +156,68 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
 ///touchscreen
-function getTouchPos(e) {
-  console.log(e);
-    debugger;
-        if (!e)
-        let e = event;
-        if(e.touches) {
-            if (e.touches.length == 1) { // Only deal with one finger
-                let touch = e.touches[0]; // Get the information for finger #1
-                touchX=touch.pageX-touch.e.offsetX;
-                touchY=touch.pageY-touch.e.offsetY;
-
-            }
-        }
-    }
-
-  canvas.addEventListener('touchstart', function (e){
-    isDrawing = true;
-    getTouchPos();
+canvas.addEventListener('touchstart', function(e){
+  mousePos = getTouchPos(canvas , e);
+  let touch = e.touches[0];
+  let mouseEvent = new mouseEvent('mousedown', {
+    clientX: touch.clientX,
+    clientY: touch.clientY
   });
-    // [touchX, touchY] = [e.offsetX, e.offsetY];
-  canvas.addEventListener('touchend', () => isDrawing = false);
-  canvas.addEventListener('touchmove', () => isDrawing = false);
+  canvas.dispatchEvent(mouseEvent);
+}, false);
 
-  // Prevent scrolling when touching the canvas from here: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
-  // document.body.addEventListener('touchstart', function (e) {
-  //   if (e.target == canvas) {
-  //     e.preventDefault();
-  //   }
-  // }, false);
-  // document.body.addEventListener('touchend', function (e) {
-  //   if (e.target == canvas) {
-  //     e.preventDefault();
-  //   }
-  // }, false);
-  // document.body.addEventListener('touchmove', function (e) {
-  //   if (e.target == canvas) {
-  //     e.preventDefault();
-  //   }
-  // }, false);
+canvas.addEventListener('touchmove', function(e) {
+  let touch = e.touches[0];
+  let mouseEvent = new mouseEvent('mousemove', {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
 
+canvas.addEventListener('touchend', function(e){
+  let mouseEvent = new mouseEvent('mouseup',{});
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+
+function getTouchPos(canvasDom, touchEvent) {
+  let rect = canvasDom.getBoundingClientREct();
+  return{
+    x: touchEvent.touches[0].clientX-rect.left,
+    y: touchEvent.touches[0].clientY-rect.top
+  };
+}
+// })
+
+
+
+
+// function getTouchPos(e) {
+//   console.log(e);
+//     // debugger;
+//     //     if (!e)
+//     //     let e = event;
+//     if(e.touches) {
+//       if (e.touches.length == 1) { // Only deal with one finger
+//       let touch = e.touches[0]; // Get the information for finger #1
+//       touchX=touch.pageX-touch.e.offsetX;
+//       touchY=touch.pageY-touch.e.offsetY;
+//     }
+//   }
+// }
+//
+//   canvas.addEventListener('touchstart', function (e){
+//     isDrawing = true;
+//     getTouchPos();
+//     e.preventDefault();
+//   });
+//     // [touchX, touchY] = [e.offsetX, e.offsetY];
+//   canvas.addEventListener('touchend', () => isDrawing = false);
+//
+//   canvas.addEventListener('touchmove', function(){
+//     isDrawing = false;
+//     e.preventDefault();
+  
 
 //////end of Canvas //////
 
