@@ -84,7 +84,7 @@ function counterView() {
   }
 }
 //globel time
-let timeLeft = 10;
+let timeLeft = 20;
 //////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
   alert.style.display = "block";
@@ -93,7 +93,7 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 5;
+    timeLeft = 15;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -188,6 +188,29 @@ buttonGuess.addEventListener('click', function(){
     finalLose.innerHTML = wordLose.toUpperCase();
   }
 })
+
+input.addEventListener('keyup', function(e){
+  if (e.keyCode === 13) {
+  //clearTime
+  clearTimeout(timerId);
+  //equal word by uppercase - to make sure that they will always be equal
+  if (input.value.toUpperCase() === currentWord.toUpperCase()){
+    //console.log('you were correct');
+    let finalWord = final.innerHTML + " " + currentWord;
+    final.innerHTML = finalWord.toUpperCase();
+    win.style.display = "block";
+    threeC.style.display = "none";
+    canvasOnly.style.display = "none";
+  } else {
+    lose.style.display = "block";
+    threeC.style.display = "none";
+    canvasOnly.style.display = "none";
+    let wordLose = finalLose.innerHTML + " " + currentWord;
+    finalLose.innerHTML = wordLose.toUpperCase();
+  }
+}
+})
+
 //refreshing
 buttonRoundWin.addEventListener('click', function() {
   screenOne.style.display = "block";
