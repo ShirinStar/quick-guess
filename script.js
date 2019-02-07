@@ -140,7 +140,6 @@ button2.addEventListener('click', function(){
     // stop the function if they are not mouse down
     if(!isDrawing) return;
     //listen for mouse move event
-    //console.log(e);
     context.beginPath();
     context.moveTo(lastX, lastY);
     context.lineTo(e.offsetX, e.offsetY);
@@ -158,16 +157,21 @@ button2.addEventListener('click', function(){
 
 ///touchscreen
 function getTouchPos(e) {
+  console.log(e);
+    debugger;
+        if (!e)
+        let e = event;
         if(e.touches) {
             if (e.touches.length == 1) { // Only deal with one finger
                 let touch = e.touches[0]; // Get the information for finger #1
                 touchX=touch.pageX-touch.e.offsetX;
                 touchY=touch.pageY-touch.e.offsetY;
+
             }
         }
     }
 
-  canvas.addEventListener('touchstart', function (e) {
+  canvas.addEventListener('touchstart', function (e){
     isDrawing = true;
     getTouchPos();
   });
@@ -176,21 +180,21 @@ function getTouchPos(e) {
   canvas.addEventListener('touchmove', () => isDrawing = false);
 
   // Prevent scrolling when touching the canvas from here: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
-  document.body.addEventListener('touchstart', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener('touchend', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener('touchmove', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
+  // document.body.addEventListener('touchstart', function (e) {
+  //   if (e.target == canvas) {
+  //     e.preventDefault();
+  //   }
+  // }, false);
+  // document.body.addEventListener('touchend', function (e) {
+  //   if (e.target == canvas) {
+  //     e.preventDefault();
+  //   }
+  // }, false);
+  // document.body.addEventListener('touchmove', function (e) {
+  //   if (e.target == canvas) {
+  //     e.preventDefault();
+  //   }
+  // }, false);
 
 
 //////end of Canvas //////
