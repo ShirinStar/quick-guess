@@ -17,10 +17,10 @@ p {
   flex-direction: column; */
   margin-left: 30%;
   margin-right: 30%;
-  background-image: url('https://media.giphy.com/media/QJIR2I3gIAo5A44q09/giphy.gif');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
+  /* background-image: url('https://media.giphy.com/media/QJIR2I3gIAo5A44q09/giphy.gif');
+  background-repeat: no-repeat; */
+  /* background-size: contain;
+  background-position: left; */
   /* width: 100vw;
   height: 100vh; */
 }
@@ -378,8 +378,10 @@ h1 {
 
   #youWon {
     background-color: black;
-    display: flex;
-    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 
   #wining{
@@ -389,15 +391,15 @@ h1 {
     font-size: 80px;
     align-items: center;
     justify-content: center;
-    /* margin-top: 15%; */
     margin-left: 5%;
-    /* padding-top: 15%; */
   }
 
   #youLose {
     background-color: black;
-    display: flex;
-    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100vw;
+    /* height: 100vh; */
   }
 
   #losing {

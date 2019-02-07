@@ -79,6 +79,7 @@ function counterView() {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
@@ -118,7 +119,7 @@ button2.addEventListener('click', function(){
   let canvas = document.querySelector('#canvas');
   // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
-  canvas.width = 800
+  canvas.width = 950
   canvas.height = 600
   console.log(window.innerWidth);
 
@@ -160,6 +161,7 @@ button3.addEventListener('click', function(){
   threeC.style.display = "block";
   threeA.style.display = "none";
   canvasOnly.style.display = "block";
+  alert.style.display = "none";
 
   //canvas.removeEventListener('mousedown', draw, true);
   })
@@ -180,10 +182,12 @@ buttonGuess.addEventListener('click', function(){
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
@@ -201,10 +205,12 @@ input.addEventListener('keyup', function(e){
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
+    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
