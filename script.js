@@ -82,7 +82,7 @@ function counterView() {
   }
 }
 //globel time
-let timeLeft = 7;
+let timeLeft = 30;
 //////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
   //console.log("counting")
@@ -90,7 +90,7 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 5;
+    timeLeft = 20;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -116,7 +116,7 @@ button2.addEventListener('click', function(){
   // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
 
-console.log(window.innerWidth);
+// console.log(window.innerWidth);
   if (window.innerWidth < 721 ){
     canvas.width = 500
     canvas.height = 700
@@ -124,8 +124,6 @@ console.log(window.innerWidth);
     canvas.width = 950
     canvas.height = 500
   }
-  console.log(window.innerWidth);
-
   context.lineJoin = 'round';
   context.lineCap = 'round';
   context.lineWidth = 8;
