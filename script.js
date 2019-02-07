@@ -159,7 +159,7 @@ button2.addEventListener('click', function(){
 canvas.addEventListener('touchstart', function(e){
   mousePos = getTouchPos(canvas , e);
   let touch = e.touches[0];
-  let mouseEvent = new mouseEvent('mousedown', {
+  let mouseEvent = new MouseEvent('mousedown', {
     clientX: touch.clientX,
     clientY: touch.clientY
   });
@@ -168,7 +168,7 @@ canvas.addEventListener('touchstart', function(e){
 
 canvas.addEventListener('touchmove', function(e) {
   let touch = e.touches[0];
-  let mouseEvent = new mouseEvent('mousemove', {
+  let mouseEvent = new MouseEvent('mousemove', {
     clientX: touch.clientX,
     clientY: touch.clientY
   });
@@ -176,7 +176,7 @@ canvas.addEventListener('touchmove', function(e) {
 }, false);
 
 canvas.addEventListener('touchend', function(e){
-  let mouseEvent = new mouseEvent('mouseup',{});
+  let mouseEvent = new MouseEvent('mouseup',{});
   canvas.dispatchEvent(mouseEvent);
 }, false);
 
@@ -217,7 +217,7 @@ function getTouchPos(canvasDom, touchEvent) {
 //   canvas.addEventListener('touchmove', function(){
 //     isDrawing = false;
 //     e.preventDefault();
-  
+
 
 //////end of Canvas //////
 
