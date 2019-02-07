@@ -157,6 +157,7 @@ button2.addEventListener('click', function(){
 
 ///touchscreen
 canvas.addEventListener('touchstart', function(e){
+  e.preventDefault();
   mousePos = getTouchPos(canvas , e);
   let touch = e.touches[0];
   let mouseEvent = new MouseEvent('mousedown', {
@@ -167,6 +168,7 @@ canvas.addEventListener('touchstart', function(e){
 }, false);
 
 canvas.addEventListener('touchmove', function(e) {
+  e.preventDefault();
   let touch = e.touches[0];
   let mouseEvent = new MouseEvent('mousemove', {
     clientX: touch.clientX,
@@ -176,6 +178,7 @@ canvas.addEventListener('touchmove', function(e) {
 }, false);
 
 canvas.addEventListener('touchend', function(e){
+  e.preventDefault();
   let mouseEvent = new MouseEvent('mouseup',{});
   canvas.dispatchEvent(mouseEvent);
 }, false);
@@ -187,7 +190,8 @@ function getTouchPos(canvasDom, touchEvent) {
     y: touchEvent.touches[0].clientY-rect.top
   };
 }
-// })
+
+
 
 
 
