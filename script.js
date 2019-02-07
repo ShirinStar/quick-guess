@@ -122,7 +122,7 @@ button2.addEventListener('click', function(){
     canvas.height = 700
   } else {
     canvas.width = 950
-    canvas.height = 500
+    canvas.height = 650
   }
   context.lineJoin = 'round';
   context.lineCap = 'round';
@@ -153,6 +153,33 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
+
+///touchscreen
+  canvas.addEventListener('touchstart', function (e) {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+  canvas.addEventListener('touchend', () => isDrawing = false);
+  canvas.addEventListener('touchmove', () => isDrawing = false);
+
+  // Prevent scrolling when touching the canvas from here: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
+  document.body.addEventListener('touchstart', function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+  document.body.addEventListener('touchend', function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+  document.body.addEventListener('touchmove', function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+
+
 //////end of Canvas //////
 
 //moving to second player!
