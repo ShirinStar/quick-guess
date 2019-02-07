@@ -33,8 +33,6 @@ const buttonRoundWin = document.querySelector('#roundOne');
 
 const buttonRoundLose = document.querySelector('#roundTwo');
 
-const alert = document.querySelector('#alert');
-
 let view = 'ready player two';
 
 let timerId;
@@ -42,6 +40,8 @@ let timerId;
 let counter1 = document.querySelector('#counter1');
 
 let counter2 = document.querySelector('#counter2');
+
+let player1 = 1;
 
 //general hidding
 screenTwo.style.display = "none";
@@ -51,7 +51,6 @@ threeB.style.display = "none";
 threeC.style.display = "none";
 win.style.display = "none";
 lose.style.display = "none";
-alert.style.display = "none";
 
   //button1 starting
 button1.addEventListener('click', function(){
@@ -74,27 +73,24 @@ function counterView() {
     canvasOnly.style.display = "none";
     threeB.style.display = "block";
     threeC.style.display = "none";
-    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
 }
 //globel time
-let timeLeft = 2;
+let timeLeft = 7;
 //////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
-  alert.style.display = "block";
   //console.log("counting")
   if (timeLeft === 0) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 65;
+    timeLeft = 5;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
@@ -120,7 +116,7 @@ button2.addEventListener('click', function(){
   // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
   canvas.width = 950
-  canvas.height = 600
+  canvas.height = 500
   console.log(window.innerWidth);
 
   context.lineJoin = 'round';
@@ -133,6 +129,7 @@ button2.addEventListener('click', function(){
   let lastY = 0;
 
   function draw(e) {
+    if (player1===1){
     // stop the function if they are not mouse down
     if(!isDrawing) return;
     //listen for mouse move event
@@ -142,8 +139,8 @@ button2.addEventListener('click', function(){
     context.lineTo(e.offsetX, e.offsetY);
     context.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY];
+    }
   }
-
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
@@ -161,9 +158,7 @@ button3.addEventListener('click', function(){
   threeC.style.display = "block";
   threeA.style.display = "none";
   canvasOnly.style.display = "block";
-  alert.style.display = "none";
-
-  //canvas.removeEventListener('mousedown', draw, true);
+  player1++;
   })
 
 //player2 guess- press input//
@@ -182,12 +177,10 @@ buttonGuess.addEventListener('click', function(){
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
@@ -205,12 +198,10 @@ input.addEventListener('keyup', function(e){
     win.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    alert.style.display = "none";
   } else {
     lose.style.display = "block";
     threeC.style.display = "none";
     canvasOnly.style.display = "none";
-    alert.style.display = "none";
     let wordLose = finalLose.innerHTML + " " + currentWord;
     finalLose.innerHTML = wordLose.toUpperCase();
   }
