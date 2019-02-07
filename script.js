@@ -115,8 +115,15 @@ button2.addEventListener('click', function(){
   let canvas = document.querySelector('#canvas');
   // could be 3d, if i want to make a video game
   let context = canvas.getContext('2d');
-  canvas.width = 950
-  canvas.height = 500
+
+console.log(window.innerWidth);
+  if (window.innerWidth < 721 ){
+    canvas.width = 500
+    canvas.height = 700
+  } else {
+    canvas.width = 950
+    canvas.height = 500
+  }
   console.log(window.innerWidth);
 
   context.lineJoin = 'round';
@@ -129,7 +136,7 @@ button2.addEventListener('click', function(){
   let lastY = 0;
 
   function draw(e) {
-    if (player1===1){
+    if (player1 === 1){
     // stop the function if they are not mouse down
     if(!isDrawing) return;
     //listen for mouse move event

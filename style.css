@@ -1,6 +1,6 @@
 body{
-  /* display: flex;
-  flex-direction: column; */
+  margin-top: 0;
+  margin-left: 0;
 }
 
 p {
@@ -53,7 +53,6 @@ h1 {
   justify-content: center;
   margin-top: 25%;
   margin-left: 5%;
-  /* background-color: blue; */
 }
 
 #rules {
@@ -120,7 +119,6 @@ h1 {
 }
 
 #secondLine {
-  /* margin-bottom: 40px; */
   font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
   display: block;
@@ -199,8 +197,6 @@ h1 {
 }
 
 #screen-two {
-  /* display: flex;
-  flex-direction: column; */
   background-color: #5921C2;
   margin-top: 0;
   margin-left: 0;
@@ -213,11 +209,10 @@ h1 {
   font-family: 'Shadows Into Light', cursive;
   color: white;
   font-size: 80px;
-  margin-top: 0;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 0;
-  padding-top: 10%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20%;
+  padding-bottom: 5%;
   letter-spacing: 2px;
 }
 
@@ -225,8 +220,8 @@ h1 {
  text-decoration: none;
  text-align: center;
  align-items: center;
- margin-left: 44%;
- margin-top: 5%;
+ display: block;
+ margin: 0 auto;
  font-family: 'Shadows Into Light', cursive;
  font-size: 24px;
  background-color: black;
@@ -244,17 +239,11 @@ h1 {
   cursor: pointer;
 }
 
-#screen-three {
-  /* display: flex;
-  flex-direction: column; */
-}
-
 #threeA{
   padding: 20px;
 }
 
 #canvas {
-  /* overflow: hidden; */
   background-color: white;
   border: 2px dotted #5921C2;
   display: block;
@@ -274,8 +263,8 @@ h1 {
   text-decoration: none;
   text-align: center;
   align-items: center;
-  margin-left: 44%;
-  margin-top: 5%;
+  display: block;
+  margin: 0 auto;
   font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
   background-color: black;
@@ -297,7 +286,6 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    /* height: 100vh; */
     display: none;
   }
 
@@ -315,7 +303,7 @@ h1 {
     border: 2px solid #F3C247;
     /* transition-duration: 0.4s; */
     padding: 4px;
-    width: 450px;
+    width: 400px;
   }
 
   #guessInput {
@@ -332,7 +320,7 @@ h1 {
     border: 1px solid #F3C247;
     /* transition-duration: 0.2s; */
     padding: 1px;
-    width: 380px;
+    width: 400px;
   }
 
   #youWon {
@@ -451,13 +439,18 @@ h1 {
   display: block;
   margin: 0 auto;
   margin-top: 50%;
+  animation: none;
 }
 #logline{
   font-size: 22px;
   margin-top: 20px;
+  animation: none;
+  opacity: 1;
 }
 #secondLine {
   font-size: 18px;
+  animation: none;
+  opacity: 1;
 }
 #rules{
   font-size: 14px;
@@ -523,25 +516,28 @@ h1 {
   }
   #guess {
     font-size: 22px;
-    width: 350px;
+    width: 330px;
   }
   #guessInput {
     font-size: 16px;
-    width: 280px;
+    width: 330px;
   }
   }
 
 
   @media only screen and (max-width: 570px) {
     #logo{
-      font-size: 30px;
+      font-size: 40px;
       display: block;
       margin: 0 auto;
       margin-top: 50%;
+      animation: none;
     }
     #logline{
       font-size: 18px;
       margin-top: 20px;
+      animation: none;
+      opacity: 1;
     }
     #secondLine {
       font-size: 16px;
@@ -549,11 +545,15 @@ h1 {
       text-align: center;
       justify-content: center;
       margin-right: 44%;
+      animation: none;
+      opacity: 1;
     }
     #rules{
       font-size: 12px;
       margin-top: 5px;
       padding: 2px;
+      /* animation: none;
+      opacity: 1; */
     }
     #btn {
       margin-top: 10px;
@@ -583,10 +583,10 @@ h1 {
     }
     #guess {
       font-size: 22px;
-      width: 350px;
+      width: 330px;
     }
     #guessInput {
       font-size: 16px;
-      width: 280px;
+      width: 330px;
     }
       }
