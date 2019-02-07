@@ -160,9 +160,9 @@ button2.addEventListener('click', function(){
 function getTouchPos(e) {
         if(e.touches) {
             if (e.touches.length == 1) { // Only deal with one finger
-                var touch = e.touches[0]; // Get the information for finger #1
-                touchX=touch.pageX-touch.target.offsetLeft;
-                touchY=touch.pageY-touch.target.offsetTop;
+                let touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.e.offsetX;
+                touchY=touch.pageY-touch.e.offsetY;
             }
         }
     }
