@@ -132,8 +132,8 @@ button2.addEventListener('click', function(){
   let isDrawing = false;
   let lastX = 0;
   let lastY = 0;
-  let touchX = 0;
-  let touchY = 0;
+  let touchX;
+  let touchY;
 
   function draw(e) {
     if (player1 === 1){
@@ -157,12 +157,21 @@ button2.addEventListener('click', function(){
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
 ///touchscreen
+function getTouchPos(e) {
+        if(e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.target.offsetLeft;
+                touchY=touch.pageY-touch.target.offsetTop;
+            }
+        }
+    }
+
   canvas.addEventListener('touchstart', function (e) {
     isDrawing = true;
-    touchX = touch.pageX-touch.target.offestX;
-    touchY = touch.pageY-touch.target.offsetY;
-    // [touchX, touchY] = [e.offsetX, e.offsetY];
+    getTouchPos();
   });
+    // [touchX, touchY] = [e.offsetX, e.offsetY];
   canvas.addEventListener('touchend', () => isDrawing = false);
   canvas.addEventListener('touchmove', () => isDrawing = false);
 
