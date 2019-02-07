@@ -84,7 +84,7 @@ function counterView() {
   }
 }
 //globel time
-let timeLeft = 20;
+let timeLeft = 2;
 //////counter----- tutorial from https://stackoverflow.com/questions/4435776/simple-clock-that-counts-down-from-30-seconds-and-executes-a-function-afterward
 function countdown(counter) {
   alert.style.display = "block";
@@ -93,7 +93,7 @@ function countdown(counter) {
     counter.innerHTML = timeLeft;
     clearTimeout(timerId);
     counterView();
-    timeLeft = 15;
+    timeLeft = 65;
   } else {
     counter.innerHTML = timeLeft;
     timeLeft--;
