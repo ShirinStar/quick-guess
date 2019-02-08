@@ -18,6 +18,8 @@ wireframes of desktop, mobile and during the process:
 - player two needs to guess the word player one received
 - the game check for a match between player two guess's to the random word player one received
 
+![alt final screen recording](https://i.imgur.com/SlpiY8u.gif)
+
 ## post MVP
 - fix responsiveness on mobile + adjust to different versions (Android, etc)
 - add more colors and brushes to the canvas
@@ -62,7 +64,6 @@ canvas.addEventListener('touchstart', function(e){
   canvas.dispatchEvent(mouseEvent);
 }, false);
 ```
-![alt final screen recording](https://i.imgur.com/SlpiY8u.gif)
 
 ## acknowledgements
 This project was made possible thanks to Brian Flynn (!), Jason Karlin and Drake Talley from General Assembley. 
