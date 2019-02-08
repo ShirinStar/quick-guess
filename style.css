@@ -197,12 +197,12 @@ h1 {
 }
 
 #screen-two {
-  background-color: #5921C2;
+  /* background-color: #5921C2; */
+  background-color: #FF6260;
   margin-top: 0;
   margin-left: 0;
   width: 100vw;
   height: 100vh;
-
 }
 
 #player {
@@ -224,9 +224,11 @@ h1 {
  margin: 0 auto;
  font-family: 'Shadows Into Light', cursive;
  font-size: 24px;
- background-color: black;
+ border: 3px solid #1CFFC1;
+ border-radius: 40%;
+ background-color: #FF6260;
  color: white;
- border: 2px solid #F3C247;
+ /* border: 2px solid #F3C247; */
  transition-duration: 0.4s;
  padding: 4px;
  width: 200px;
@@ -234,7 +236,8 @@ h1 {
 
 #btnReady:hover {
   background-color: #5921C2;
-  border: 2px solid #F3C247;
+  border: 3px solid black;
+  border-radius: 40%;
   color: white;
   cursor: pointer;
 }
@@ -463,10 +466,10 @@ h1 {
   margin-top: 10px;
 }
 #player {
-  font-size: 40px;
+  font-size: 80px;
   display: block;
   margin: 0 auto;
-  padding-top: 30%;
+  padding-top: 40%;
 }
 #btnReady {
   margin-top: 15px;
@@ -563,8 +566,8 @@ h1 {
     }
     #btn {
       margin-top: 10px;
-      font-size: 14px;
-      width: 120px;
+      font-size: 18px;
+      width: 130px;
       margin-top: 30px;
       border: 3px solid #1CFFC1;
       border-radius: 40%;
@@ -572,8 +575,8 @@ h1 {
       opacity: 1;
     }
     #btnReady {
-      font-size: 16px;
-      width: 130px;
+      font-size: 22px;
+      width: 150px;
     }
     #btnTwo {
       font-size: 16px;
