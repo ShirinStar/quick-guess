@@ -33,7 +33,7 @@ Javascript, ,HTML, canvas HTML, CSS
 
 
 ## Issues and Resolutions
-one of the biggest problem I encountered in this project was to connect the canvas to the touch screen of the mobile device. Before starting I was sure that the connection between the mouse and the movement of the finger would be similar and simple, but I was wrong it took me a while to find the solution for this problem, part of it was taken from [this tutorial] (http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html)
+One of the biggest problems I encountered in this project was to connect the canvas to the touch screen of the mobile device. Before starting I was sure that the connection between the mouse and the movement of the finger would be similar and simple, but I was wrong it took me a while to find the solution for this problem, part of it was taken from this tutorial: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
 ```
 canvas.addEventListener('touchstart', function(e){
   e.preventDefault();
