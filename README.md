@@ -62,6 +62,7 @@ canvas.addEventListener('touchstart', function(e){
   canvas.dispatchEvent(mouseEvent);
 }, false);
 ```
+![alt final screen recording](https://i.imgur.com/SlpiY8u.gif)
 
 ## acknowledgements
 This project was made possible thanks to Brian Flynn (!), Jason Karlin and Drake Talley from General Assembley. 
