@@ -343,54 +343,54 @@ h1 {
 
   @media only screen and (max-width: 720px) {
 #logo{
-  font-size: 40px;
+  font-size: 90px;
   display: block;
   margin: 0 auto;
-  margin-top: 50%;
+  margin-top: 30%;
   animation: none;
 }
 #logline{
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 20px;
   animation: none;
   opacity: 1;
 }
 #secondLine {
-  font-size: 18px;
+  font-size: 20px;
   animation: none;
   opacity: 1;
 }
 #rules{
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 5px;
 }
 #btn {
   margin-top: 15px;
-  font-size: 18px;
+  font-size: 20px;
   width: 180px;
   margin-top: 10px;
+  display: block;
+  margin: 0 auto;
 }
 #player {
-  font-size: 80px;
+  font-size: 90px;
   display: block;
   margin: 0 auto;
-  padding-top: 40%;
+  padding-top: 20%;
 }
 #btnReady {
-  margin-top: 15px;
-  font-size: 18px;
-  width: 150px;
+  font-size: 20px;
+  width: 180px;
   display: block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 #btnTwo {
-  margin-top: 15px;
-  font-size: 18px;
+  font-size: 20px;
   width: 150px;
   display: block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
   }
   #roundOne {
     margin-top: 15px;
@@ -409,26 +409,33 @@ h1 {
     margin-top: 40px;
   }
   #losing{
-    font-size: 40px;
+    font-size: 70px;
     display: block;
     margin: 0 auto;
     margin-top: 20%;
     padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   #wining {
-    font-size: 40px;
+    font-size: 70px;
     display: block;
     margin: 0 auto;
     margin-top: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-bottom: 15px;
   }
   #guess {
-    font-size: 22px;
-    width: 330px;
+    font-size: 20px;
+    width: 150px;
   }
   #guessInput {
+    font-size: 18px;
+    width: 150px;
+  }
+  p{
     font-size: 16px;
-    width: 330px;
   }
 
   @media only screen and (max-width: 570px) {
