@@ -19,23 +19,24 @@ p {
 }
 
 #logo{
+  color: #FF6260;
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
-  font-size: 80px;
+  font-size: 120px;
   align-items: center;
   justify-content: center;
   margin-top: 20%;
   margin-left: 5%;
   margin-bottom: 0;
-  padding: 0;
+  /* padding: 0; */
   letter-spacing: 2px;
-  animation-name: space-logo;
+  /* animation-name: space-logo;
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
-  animation-duration: 4s;
+  animation-duration: 4s; */
 }
 
-@keyframes space-logo {
+/* @keyframes space-logo {
   0% {
      color: white;
      margin-bottom: -20px;
@@ -43,7 +44,7 @@ p {
    20% {
     letter-spacing: 20px;
    }
- }
+ } */
 
 h1 {
   font-family: 'Shadows Into Light', cursive;
@@ -61,92 +62,33 @@ h1 {
   /* width: 300px; */
   display: block;
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   padding: 10px;
   text-align: center;
-  animation-name: rulesPlayers;
-  opacity: 0;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-}
-
-@keyframes rulesPlayers {
-  20% {
-    opacity: 0;
-   }
-   40% {
-     opacity: 0.25;
-   }
-  60% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 #logline {
   font-family: 'Shadows Into Light', cursive;
-  font-size: 32px;
+  font-size: 40px;
   margin-top: 0;
   padding-bottom: 5px;
   margin-bottom: 0;
-  opacity: 0;
-  animation-name: logline1;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
+  padding-top: 15px;
 }
 
-@keyframes logline1 {
-  20% {
-    opacity: 0;
-   }
-   40%{
-     opacity: 0.25;
-   }
-  60% {
-    opacity: 0.75;
-  }
-  100%{
-    opacity: 1;
-  }
-}
 
 #secondLine {
   font-family: 'Shadows Into Light', cursive;
-  font-size: 24px;
+  font-size: 28px;
   display: block;
   margin-top: 0 auto;
   padding-bottom: 5px;
-  opacity: 0;
-  animation-name: secondLine1;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-duration: 4s;
-  animation-delay: 2s;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 
-@keyframes secondLine1 {
-  20% {
-    opacity: 0;
-   }
-   40%{
-     opacity: 0.25;
-   }
-  60% {
-    opacity: 0.75;
-  }
-  100%{
-    opacity: 1;
-  }
-}
 
 #btn {
  text-decoration: none;
@@ -159,41 +101,20 @@ h1 {
  font-size: 24px;
  background-color: white;
  color: black;
- border: 2px solid #F3C247;
- transition-duration: 0.4s;
+ border: 3px solid #1CFFC1;
+ border-radius: 40%;
+ /* transition-duration: 0.4s; */
  padding: 4px;
  width: 250px;
- animation-name: buttonFirst;
- animation-timing-function: ease-in;
- opacity: 0;
- animation-iteration-count: 1;
- animation-fill-mode: forwards;
- animation-duration: 4s;
- animation-delay: 2s;
+
 }
 
-@keyframes buttonFirst {
-  20% {
-    opacity: 0;
-   }
-   40%{
-     opacity: 0;
-   }
-  60% {
-    opacity: 0;
-  }
-  90%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: 1;
-  }
-}
 
 #btn:hover {
-  background-color: #F3C247;
-  color: white;
+  /* background-color: #1CFFC1; */
+  color: black;
   cursor: pointer;
+  border: 3px solid black;
 }
 
 #screen-two {
@@ -208,10 +129,10 @@ h1 {
 #player {
   font-family: 'Shadows Into Light', cursive;
   color: white;
-  font-size: 80px;
+  font-size: 120px;
   display: block;
   margin: 0 auto;
-  padding-top: 20%;
+  padding-top: 15%;
   padding-bottom: 5%;
   letter-spacing: 2px;
 }
@@ -223,7 +144,7 @@ h1 {
  display: block;
  margin: 0 auto;
  font-family: 'Shadows Into Light', cursive;
- font-size: 24px;
+ font-size: 28px;
  border: 3px solid #1CFFC1;
  border-radius: 40%;
  background-color: #FF6260;
@@ -235,16 +156,16 @@ h1 {
 }
 
 #btnReady:hover {
-  background-color: #5921C2;
+  background-color: #FF6260;
   border: 3px solid black;
   border-radius: 40%;
   color: white;
   cursor: pointer;
 }
 
-#threeA{
-  background-color: #C9FF3F;
-  /* padding: 100px; */
+ #screen-three{
+  /* background-color: #C9FF3F; */
+  padding-top: 20px;
 }
 
 #canvas {
@@ -255,11 +176,10 @@ h1 {
 }
 
 #threeB{
-  /* background-color: #5921C2; */
   background-color: #FF6260;
   margin-top: 0;
   margin-left: 0;
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   display: none;
 }
@@ -271,7 +191,7 @@ h1 {
   display: block;
   margin: 0 auto;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 24px;
+  font-size: 28px;
   border: 3px solid #1CFFC1;
   border-radius: 40%;
   background-color: #FF6260;
@@ -282,8 +202,9 @@ h1 {
   }
 
   #btnTwo:hover {
-    background-color: #5921C2;
-    border: 2px solid #F3C247;
+    background-color: #FF6260;
+    border: 3px solid black;
+    border-radius: 40%;
     color: white;
     cursor: pointer;
   }
@@ -301,12 +222,11 @@ h1 {
     align-items: center;
     display: block;
     margin: 0 auto;
-    /* margin-left: 15%; */
     font-family: 'Shadows Into Light', cursive;
     font-size: 24px;
     background-color: black;
-    color: white;
-    border: 2px solid #F3C247;
+    color: #C9FF3F;;
+    border: 2px solid #C9FF3F;
     /* transition-duration: 0.4s; */
     padding: 4px;
     width: 400px;
@@ -322,8 +242,8 @@ h1 {
     font-family: 'Shadows Into Light', cursive;
     font-size: 18px;
     background-color: black;
-    color: grey;
-    border: 1px solid #F3C247;
+    color: #C9FF3F;
+    border: 1px solid #C9FF3F;
     /* transition-duration: 0.2s; */
     padding: 1px;
     width: 400px;
@@ -333,15 +253,15 @@ h1 {
     background-color: white;
     margin-top: 0;
     margin-left: 0;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
   }
 
   #wining {
     font-family: 'Shadows Into Light', cursive;
-    color: black;
+    color: #FF6260;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     letter-spacing: 2px;
     align-items: center;
     justify-content: center;
@@ -349,18 +269,18 @@ h1 {
   }
 
   #youLose {
-    background-color: white;
+    background-color: white; */
     margin-top: 0;
     margin-left: 0;
-    width: 100vw;
+    /* width: 100vw; */
     /* height: 100vh; */
   }
 
   #losing {
     font-family: 'Shadows Into Light', cursive;
-    color: black;
+    color: #FF6260;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     letter-spacing: 2px;
     align-items: center;
     justify-content: center;
@@ -371,46 +291,44 @@ h1 {
 
   #roundOne {
     text-decoration: none;
-    text-align: center;
-    align-items: center;
-    margin-left: 45%;
+    display: block;
+    margin: 0 auto;
     font-family: 'Shadows Into Light', cursive;
-    font-size: 24px;
+    font-size: 28px;
     background-color: white;
     color: black;
-    border: 2px solid #F3C247;
+    border: 3px solid #1CFFC1;
+    border-radius: 40%;
     transition-duration: 0.4s;
-    padding: 4px;
-    margin-top: 40px;
+    padding-top: 25px;
     width: 200px;
   }
 
   #roundOne:hover {
-    background-color: #F3C247;
     color: black;
     cursor: pointer;
+    border: 3px solid black;
   }
 
   #roundTwo {
     text-decoration: none;
-    text-align: center;
-    align-items: center;
-    margin-left: 45%;
+    display: block;
+    margin: 0 auto;
     font-family: 'Shadows Into Light', cursive;
-    font-size: 24px;
+    font-size: 28px;
     background-color: white;
     color: black;
-    border: 2px solid #F3C247;
+    border: 3px solid #1CFFC1;
+    border-radius: 40%;
     transition-duration: 0.4s;
-    padding: 4px;
-    margin-top: 40px;
+    padding-top: 25px;
     width: 200px;
   }
 
   #roundTwo:hover {
-    background-color: #F3C247;
     color: black;
     cursor: pointer;
+    border: 3px solid black;
   }
 
   #wordSpaceTwo {
@@ -420,7 +338,7 @@ h1 {
     margin-bottom: 30px;
     display: block;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -433,7 +351,7 @@ h1 {
     margin-bottom: 30px;
     display: block;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
