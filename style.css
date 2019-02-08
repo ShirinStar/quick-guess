@@ -527,39 +527,49 @@ h1 {
 
   @media only screen and (max-width: 570px) {
     #logo{
-      font-size: 40px;
+      font-size: 90px;
+      color: #FF6260;
       display: block;
       margin: 0 auto;
-      margin-top: 50%;
+      margin-top: 35%;
       animation: none;
     }
     #logline{
-      font-size: 18px;
+      font-size: 26px;
+      font-weight: 500;
       margin-top: 20px;
       animation: none;
       opacity: 1;
     }
     #secondLine {
-      font-size: 16px;
+      font-size: 18px;
       width: 230px;
-      text-align: center;
-      justify-content: center;
-      margin-right: 44%;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      margin-top: 10px;
+      margin-bottom: 10px;
       animation: none;
       opacity: 1;
     }
     #rules{
       font-size: 12px;
-      margin-top: 5px;
+      margin-top: 25px;
+      margin-right: 45%;
+      width: 180px;
       padding: 2px;
-      /* animation: none;
-      opacity: 1; */
+      animation: none;
+      opacity: 1;
     }
     #btn {
       margin-top: 10px;
       font-size: 14px;
       width: 120px;
       margin-top: 30px;
+      border: 3px solid #1CFFC1;
+      border-radius: 40%;
+      animation: none;
+      opacity: 1;
     }
     #btnReady {
       font-size: 16px;
