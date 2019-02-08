@@ -24,3 +24,24 @@ wireframes of desktop, mobile and during the process:
 - switch player feature
 - times-up alert
 - connect via different devices on the same network
+- random words via online data
+
+## Additional Libraries
+Javascript, ,HTML, canvas HTML, CSS
+
+## Code Snippet
+
+
+## Issues and Resolutions
+one of the biggest problem I encountered in this project was to connect the canvas to the touch screen of the mobile device. Before starting I was sure that the connection between the mouse and the movement of the finger would be similar and simple, but I was wrong it took me a while to find the solution for this problem, part of it was taken from [this tutorial] (http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html)
+```
+canvas.addEventListener('touchstart', function(e){
+  e.preventDefault();
+  let touch = e.touches[0];
+  let mouseEvent = new MouseEvent('mousedown', {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+```
