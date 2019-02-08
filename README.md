@@ -30,7 +30,24 @@ wireframes of desktop, mobile and during the process:
 Javascript, ,HTML, canvas HTML, CSS
 
 ## Code Snippet
-
+This project uses a lot of DOM, through "none" - "block" <div> elements from one HTML page. I loved working on this project that way. For example:
+```
+function counterView() {
+  if (view === "ready player two"){
+    threeA.style.display = "none";
+    canvasOnly.style.display = "none";
+    threeB.style.display = "block";
+    threeC.style.display = "none";
+} else {
+    lose.style.display = "block";
+    threeC.style.display = "none";
+    canvasOnly.style.display = "none";
+    let wordLose = finalLose.innerHTML + " " + currentWord;
+    finalLose.innerHTML = wordLose.toUpperCase();
+  }
+}
+```
+ Also, learned about HTML canvas, used counters, Math.random CSS.   
 
 ## Issues and Resolutions
 One of the biggest problems I encountered in this project was to connect the canvas to the touch screen of the mobile device. Before starting I was sure that the connection between the mouse and the movement of the finger would be similar and simple, but I was wrong it took me a while to find the solution for this problem, part of it was taken from this tutorial: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
@@ -45,3 +62,6 @@ canvas.addEventListener('touchstart', function(e){
   canvas.dispatchEvent(mouseEvent);
 }, false);
 ```
+
+thank you, 
+~shirin
