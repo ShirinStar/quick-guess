@@ -5,7 +5,7 @@ draw-guess is a game for two, where one player gets a random word to draw in 30 
 test the project here: https://shirinstar.github.io/quick-guess/
 
 ## wireframes
-Here is the initial thinking of how I started, the idea was to focus on simple and intutive user experience that support such a game.:
+Here is the initial thinking of how I started, the idea was to focus on simple and intutive user experience that support such a game:
 
 wireframes of desktop, mobile and during the process: 
 ![alt during the process](https://i.imgur.com/5GOZSE8.png)
@@ -30,7 +30,7 @@ wireframes of desktop, mobile and during the process:
 Javascript, ,HTML, canvas HTML, CSS
 
 ## Code Snippet
-This project uses a lot of DOM, through "none" - "block" <div> elements from one HTML page. I loved working on this project that way. For example:
+This project uses a lot of DOM, through "none" - "block" <div> elements from one HTML page. I loved working using this logic, creating more flexible and dynamic project. For example:
 ```
 function counterView() {
   if (view === "ready player two"){
@@ -47,7 +47,7 @@ function counterView() {
   }
 }
 ```
- Also, learned about HTML canvas, used counters, Math.random CSS.   
+ Also, learned about HTML Canvas, used counters, Math.random to generate Random words from ore-exsited Array and worked with CSS animation and flex-box.   
 
 ## Issues and Resolutions
 One of the biggest problems I encountered in this project was to connect the canvas to the touch screen of the mobile device. Before starting I was sure that the connection between the mouse and the movement of the finger would be similar and simple, but I was wrong it took me a while to find the solution for this problem, part of it was taken from this tutorial: http://bencentra.com/code/2014/12/05/html5-canvas-touch-events.html
