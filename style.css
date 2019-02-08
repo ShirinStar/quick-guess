@@ -243,18 +243,20 @@ h1 {
 }
 
 #threeA{
-  padding: 20px;
+  background-color: #C9FF3F;
+  /* padding: 100px; */
 }
 
 #canvas {
   background-color: white;
-  border: 2px dotted #5921C2;
+  border: 5px solid black;
   display: block;
   margin: 0 auto;
 }
 
 #threeB{
-  background-color: #5921C2;
+  /* background-color: #5921C2; */
+  background-color: #FF6260;
   margin-top: 0;
   margin-left: 0;
   width: 100vw;
@@ -270,9 +272,10 @@ h1 {
   margin: 0 auto;
   font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
-  background-color: black;
+  border: 3px solid #1CFFC1;
+  border-radius: 40%;
+  background-color: #FF6260;
   color: white;
-  border: 2px solid #F3C247;
   transition-duration: 0.4s;
   padding: 4px;
   width: 200px;
