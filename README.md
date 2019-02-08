@@ -63,5 +63,8 @@ canvas.addEventListener('touchstart', function(e){
 }, false);
 ```
 
+## acknowledgements
+This project was made thanks to Brian Flynn (!), Jason Karlin and Drake Talley from General Assembley. 
+
 thank you, 
 ~shirin
