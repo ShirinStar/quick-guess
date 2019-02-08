@@ -12,8 +12,6 @@ p {
 }
 
 #screen-one {
-  /* display: flex;
-  flex-direction: column; */
   margin-left: 30%;
   margin-right: 30%;
 }
@@ -28,10 +26,8 @@ p {
   margin-top: 20%;
   margin-left: 5%;
   margin-bottom: 0;
-  /* padding: 0; */
   letter-spacing: 2px;
 }
-
 
 h1 {
   font-family: 'Shadows Into Light', cursive;
@@ -46,7 +42,6 @@ h1 {
 #rules {
   font-family: 'Roboto Mono', monospace;
   font-size: 18px;
-  /* width: 300px; */
   display: block;
   margin: 0 auto;
   margin-bottom: 25px;
@@ -62,7 +57,6 @@ h1 {
   margin-bottom: 0;
   padding-top: 15px;
 }
-
 
 #secondLine {
   font-family: 'Shadows Into Light', cursive;
@@ -88,21 +82,17 @@ h1 {
  color: black;
  border: 3px solid #1CFFC1;
  border-radius: 40%;
- /* transition-duration: 0.4s; */
  padding: 4px;
  width: 250px;
-
 }
 
 #btn:hover {
-  /* background-color: #1CFFC1; */
   color: black;
   cursor: pointer;
   border: 3px solid black;
 }
 
 #screen-two {
-  /* background-color: #5921C2; */
   background-color: #FF6260;
   margin-top: 0;
   margin-left: 0;
@@ -133,7 +123,6 @@ h1 {
  border-radius: 40%;
  background-color: #FF6260;
  color: white;
- /* border: 2px solid #F3C247; */
  transition-duration: 0.4s;
  padding: 4px;
  width: 200px;
@@ -148,7 +137,6 @@ h1 {
 }
 
  #threeA{
-  /* background-color: #C9FF3F; */
   margin-top: 30px;
 }
 
@@ -169,7 +157,6 @@ h1 {
   background-color: #FF6260;
   margin-top: 0;
   margin-left: 0;
-  /* width: 100vw; */
   height: 100vh;
   display: none;
 }
@@ -217,7 +204,6 @@ h1 {
     background-color: black;
     color: #C9FF3F;;
     border: 2px solid #C9FF3F;
-    /* transition-duration: 0.4s; */
     padding: 4px;
     width: 400px;
   }
@@ -234,7 +220,6 @@ h1 {
     background-color: black;
     color: #C9FF3F;
     border: 1px solid #C9FF3F;
-    /* transition-duration: 0.2s; */
     padding: 1px;
     width: 400px;
   }
@@ -243,8 +228,6 @@ h1 {
     background-color: white;
     margin-top: 0;
     margin-left: 0;
-    /* width: 100vw;
-    height: 100vh; */
   }
 
   #wining {
@@ -262,8 +245,6 @@ h1 {
     background-color: white; */
     margin-top: 0;
     margin-left: 0;
-    /* width: 100vw; */
-    /* height: 100vh; */
   }
 
   #losing {
@@ -274,9 +255,7 @@ h1 {
     letter-spacing: 2px;
     align-items: center;
     justify-content: center;
-    /* margin-top: 15%; */
     margin-left: 5%;
-    /* padding-top: 15%; */
   }
 
   #roundOne {
