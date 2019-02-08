@@ -97,7 +97,7 @@ let context = canvas.getContext('2d');
 // console.log(window.innerWidth);
 if (window.innerWidth < 721 ){
   canvas.width = 450
-  canvas.height = 650
+  canvas.height = 570
 } else {
   canvas.width = 950
   canvas.height = 650
