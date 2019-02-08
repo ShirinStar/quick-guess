@@ -19,7 +19,7 @@ wireframes of desktop, mobile and during the process:
 - the game check for a match between player two guess's to the random word player one received
 
 ## post MVP
-- fix responsiveness on mobile 
+- fix responsiveness on mobile + adjust to different versions (Android, etc)
 - add more colors and brushes to the canvas
 - switch player feature
 - times-up alert
@@ -30,7 +30,7 @@ wireframes of desktop, mobile and during the process:
 Javascript, ,HTML, canvas HTML, CSS
 
 ## Code Snippet
-This project uses a lot of DOM, through "none" - "block" <div> elements from one HTML page. I loved working using this logic, creating more flexible and dynamic project. For example:
+This project uses a lot of DOM, through "none" - "block" <div> elements from one HTML page. I loved working using this logic, creating a more flexible and dynamic project. For example:
 ```
 function counterView() {
   if (view === "ready player two"){
